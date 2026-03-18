@@ -2376,3 +2376,79 @@ select.form-control option { background: var(--color-bg); color: var(--color-par
 /* --- data-animate: JS adds .in-view on scroll (uses .fade-up) --- */
 [data-animate] { opacity: 0; transform: translateY(24px); transition: opacity var(--dur) var(--ease-out), transform var(--dur) var(--ease-out); }
 [data-animate].in-view { opacity: 1; transform: translateY(0); }
+
+/* ==========================================================================
+   30. NAV UPDATES — smaller links + language dropdown
+   ========================================================================== */
+
+/* Smaller nav link text so Spanish fits */
+.nav__links { gap: 24px; }
+.nav__link {
+  font-size: 11px;
+  letter-spacing: 0.05em;
+}
+
+/* Language dropdown */
+.nav__lang-dropdown {
+  position: relative;
+}
+.nav__lang-current {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 4px 10px;
+  border-radius: 3px;
+  color: var(--color-gold);
+  border: 1px solid var(--color-gold);
+  cursor: pointer;
+  transition: background-color var(--dur-fast) ease;
+  white-space: nowrap;
+}
+.nav__lang-current:hover,
+.nav__lang-dropdown.is-open .nav__lang-current {
+  background: rgba(201, 168, 76, 0.1);
+}
+.nav__lang-current span {
+  font-size: 9px;
+  display: inline-block;
+  transition: transform 0.2s ease;
+  line-height: 1;
+}
+.nav__lang-dropdown.is-open .nav__lang-current span {
+  transform: rotate(180deg);
+}
+
+.nav__lang-list {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: #111820;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: 4px 0;
+  min-width: 72px;
+  z-index: 999;
+  flex-direction: column;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+}
+.nav__lang-dropdown.is-open .nav__lang-list {
+  display: flex;
+}
+.nav__lang-option {
+  display: block;
+  padding: 8px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--color-muted);
+  transition: color var(--dur-fast) ease, background-color var(--dur-fast) ease;
+  white-space: nowrap;
+}
+.nav__lang-option:hover {
+  color: var(--color-gold);
+  background: rgba(201, 168, 76, 0.06);
+}

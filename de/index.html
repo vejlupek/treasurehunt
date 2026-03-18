@@ -84,11 +84,13 @@
 
       <!-- Desktop right: lang switcher + CTA -->
       <div class="nav__right">
-        <div class="nav__lang" role="list" aria-label="Sprachauswahl">
-          <a href="/treasurehunt/"    class="nav__lang-btn" hreflang="cs" aria-label="Česky">CS</a>
-          <a href="/treasurehunt/en/" class="nav__lang-btn" hreflang="en" aria-label="English">EN</a>
-          <a href="/treasurehunt/de/" class="nav__lang-btn is-active" hreflang="de" aria-label="Deutsch" aria-current="true">DE</a>
-          <a href="/treasurehunt/es/" class="nav__lang-btn" hreflang="es" aria-label="Español">ES</a>
+        <div class="nav__lang-dropdown">
+          <button class="nav__lang-current" aria-expanded="false">DE <span aria-hidden="true">▾</span></button>
+          <div class="nav__lang-list">
+            <a href="/treasurehunt/" class="nav__lang-option" hreflang="cs">CS</a>
+            <a href="/treasurehunt/en/" class="nav__lang-option" hreflang="en">EN</a>
+            <a href="/treasurehunt/es/" class="nav__lang-option" hreflang="es">ES</a>
+          </div>
         </div>
         <a href="#contact" class="btn btn-primary nav__cta">Unverbindlich anfragen</a>
       </div>

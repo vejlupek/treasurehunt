@@ -101,20 +101,22 @@
     <div class="nav__inner">
       <a href="/treasurehunt/" class="nav__logo">Treasure Hunt <span>Prague</span></a>
       <nav aria-label="Hlavní navigace" class="nav__links">
-        <a href="/treasurehunt/#proc-treasure-hunt" class="nav__link">Proč Treasure Hunt</a>
-        <a href="/treasurehunt/#jak-to-funguje" class="nav__link">Jak to funguje</a>
-        <a href="/treasurehunt/#lokace" class="nav__link">Lokace</a>
-        <a href="/treasurehunt/#galerie" class="nav__link">Galerie</a>
+        <a href="/treasurehunt/#why" class="nav__link">Proč to funguje</a>
+        <a href="/treasurehunt/#locations" class="nav__link">Lokace</a>
+        <a href="/treasurehunt/#how" class="nav__link">Jak to funguje</a>
+        <a href="/treasurehunt/#reviews" class="nav__link">Recenze</a>
         <a href="/treasurehunt/blog/" class="nav__link">Blog</a>
       </nav>
       <div class="nav__right">
-        <div class="nav__lang">
-          <a href="/treasurehunt/blog/jak-vybrat-teambuilding/" class="nav__lang-btn is-active">CS</a>
-          <a href="/treasurehunt/en/blog/how-to-choose-team-building/" class="nav__lang-btn">EN</a>
-          <a href="/treasurehunt/de/blog/teambuilding-auswaehlen/" class="nav__lang-btn">DE</a>
-          <a href="/treasurehunt/es/blog/como-elegir-teambuilding/" class="nav__lang-btn">ES</a>
+        <div class="nav__lang-dropdown">
+          <button class="nav__lang-current" aria-expanded="false">CS <span aria-hidden="true">▾</span></button>
+          <div class="nav__lang-list">
+            <a href="/treasurehunt/en/blog/how-to-choose-team-building/" class="nav__lang-option" hreflang="en">EN</a>
+            <a href="/treasurehunt/de/blog/teambuilding-auswaehlen/" class="nav__lang-option" hreflang="de">DE</a>
+            <a href="/treasurehunt/es/blog/como-elegir-teambuilding/" class="nav__lang-option" hreflang="es">ES</a>
+          </div>
         </div>
-        <a href="/treasurehunt/#kontakt" class="btn btn-primary nav__cta">Rezervovat</a>
+        <a href="/treasurehunt/#contact" class="btn btn-primary nav__cta">Rezervovat</a>
       </div>
       <button class="nav__hamburger" aria-label="Otevřít menu" aria-expanded="false" aria-controls="mobile-menu">
         <span></span><span></span><span></span>
@@ -125,10 +127,10 @@
   <div class="nav-mobile" id="mobile-menu" role="dialog" aria-label="Mobilní menu">
     <button class="nav-mobile__close" aria-label="Zavřít menu">&times;</button>
     <nav class="nav-mobile__links">
-      <a href="/treasurehunt/#proc-treasure-hunt" class="nav-mobile__link">Proč Treasure Hunt</a>
-      <a href="/treasurehunt/#jak-to-funguje" class="nav-mobile__link">Jak to funguje</a>
-      <a href="/treasurehunt/#lokace" class="nav-mobile__link">Lokace</a>
-      <a href="/treasurehunt/#galerie" class="nav-mobile__link">Galerie</a>
+      <a href="/treasurehunt/#why" class="nav-mobile__link">Proč to funguje</a>
+      <a href="/treasurehunt/#locations" class="nav-mobile__link">Lokace</a>
+      <a href="/treasurehunt/#how" class="nav-mobile__link">Jak to funguje</a>
+      <a href="/treasurehunt/#reviews" class="nav-mobile__link">Recenze</a>
       <a href="/treasurehunt/blog/" class="nav-mobile__link">Blog</a>
     </nav>
     <div class="nav-mobile__lang">
@@ -137,7 +139,7 @@
       <a href="/treasurehunt/de/blog/teambuilding-auswaehlen/" class="nav-mobile__lang-btn">DE</a>
       <a href="/treasurehunt/es/blog/como-elegir-teambuilding/" class="nav-mobile__lang-btn">ES</a>
     </div>
-    <a href="/treasurehunt/#kontakt" class="btn btn-primary nav-mobile__cta">Rezervovat teambuilding</a>
+    <a href="/treasurehunt/#contact" class="btn btn-primary nav-mobile__cta">Rezervovat teambuilding</a>
   </div>
 
   <main class="article-page" id="main-content">
@@ -245,7 +247,7 @@
       <div class="article-cta__inner">
         <h2>Připraveni zarezervovat?</h2>
         <p>Pošlete nám nezávaznou poptávku — odpovíme do 24 hodin.</p>
-        <a href="/treasurehunt/#kontakt" class="btn btn-primary">Nezávazná poptávka →</a>
+        <a href="/treasurehunt/#contact" class="btn btn-primary">Nezávazná poptávka →</a>
       </div>
     </div>
 
@@ -364,7 +366,7 @@
         <div>
           <p class="footer__nav-title">Kontakt</p>
           <ul class="footer__nav-list">
-            <li><a href="/treasurehunt/#kontakt" class="footer__nav-link">Rezervovat teambuilding</a></li>
+            <li><a href="/treasurehunt/#contact" class="footer__nav-link">Rezervovat teambuilding</a></li>
             <li><a href="mailto:info@treasurehuntprague.cz" class="footer__nav-link">info@treasurehuntprague.cz</a></li>
           </ul>
         </div>

@@ -183,11 +183,13 @@
         <li><a href="/treasurehunt/en/#faq"       class="nav__link" data-i18n="nav.faq">FAQ</a></li>
       </ul>
       <div class="nav__right">
-        <div class="nav__lang" aria-label="Language">
-          <a href="/treasurehunt/"    class="nav__lang-btn" hreflang="cs">CS</a>
-          <a href="/treasurehunt/en/" class="nav__lang-btn is-active" hreflang="en" aria-current="true">EN</a>
-          <a href="/treasurehunt/de/" class="nav__lang-btn" hreflang="de">DE</a>
-          <a href="/treasurehunt/es/" class="nav__lang-btn" hreflang="es">ES</a>
+        <div class="nav__lang-dropdown">
+          <button class="nav__lang-current" aria-expanded="false">EN <span aria-hidden="true">▾</span></button>
+          <div class="nav__lang-list">
+            <a href="/treasurehunt/" class="nav__lang-option" hreflang="cs">CS</a>
+            <a href="/treasurehunt/de/" class="nav__lang-option" hreflang="de">DE</a>
+            <a href="/treasurehunt/es/" class="nav__lang-option" hreflang="es">ES</a>
+          </div>
         </div>
         <a href="/treasurehunt/en/#contact" class="btn btn-primary nav__cta" data-i18n="nav.cta">Get a Quote</a>
       </div>

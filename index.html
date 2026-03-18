@@ -98,25 +98,27 @@
 </head>
 <body>
 
-<nav class="nav" id="nav" role="navigation" aria-label="Hlavní navigace">
+<header class="nav" id="nav" role="navigation" aria-label="Hlavní navigace">
   <div class="nav__inner container">
     <a href="/treasurehunt/" class="nav__logo" aria-label="Treasure Hunt Prague - domů">
       Treasure Hunt <span>Prague</span>
     </a>
-    <ul class="nav__links" role="list">
-      <li><a href="#why" class="nav__link" data-i18n="nav.why">Proč to funguje</a></li>
-      <li><a href="#locations" class="nav__link" data-i18n="nav.locations">Lokace</a></li>
-      <li><a href="#how" class="nav__link" data-i18n="nav.how">Jak to funguje</a></li>
-      <li><a href="#reviews" class="nav__link" data-i18n="nav.reviews">Recenze</a></li>
-      <li><a href="#faq" class="nav__link" data-i18n="nav.faq">FAQ</a></li>
-    </ul>
+    <nav class="nav__links">
+      <a href="#why" class="nav__link" data-i18n="nav.why">Proč to funguje</a>
+      <a href="#locations" class="nav__link" data-i18n="nav.locations">Lokace</a>
+      <a href="#how" class="nav__link" data-i18n="nav.how">Jak to funguje</a>
+      <a href="#reviews" class="nav__link" data-i18n="nav.reviews">Recenze</a>
+      <a href="#faq" class="nav__link" data-i18n="nav.faq">FAQ</a>
+    </nav>
     <div class="nav__right">
-      <div class="nav__lang" role="group" aria-label="Výběr jazyka">
-        <button class="nav__lang-btn is-active" data-lang="cs" aria-label="Česky">CS</button>
-        <button class="nav__lang-btn" data-lang="en" aria-label="English">EN</button>
-        <button class="nav__lang-btn" data-lang="de" aria-label="Deutsch">DE</button>
-        <button class="nav__lang-btn" data-lang="es" aria-label="Español">ES</button>
-      </div>
+      <div class="nav__lang-dropdown">
+          <button class="nav__lang-current" aria-expanded="false">CS <span aria-hidden="true">▾</span></button>
+          <div class="nav__lang-list">
+            <a href="/treasurehunt/en/" class="nav__lang-option" hreflang="en">EN</a>
+            <a href="/treasurehunt/de/" class="nav__lang-option" hreflang="de">DE</a>
+            <a href="/treasurehunt/es/" class="nav__lang-option" hreflang="es">ES</a>
+          </div>
+        </div>
       <a href="#contact" class="btn btn-primary nav__cta" data-i18n="nav.cta">Nezávazná poptávka</a>
     </div>
     <button class="nav__hamburger" aria-label="Otevřít menu" aria-expanded="false" aria-controls="nav-mobile">
@@ -125,7 +127,7 @@
       <span></span>
     </button>
   </div>
-</nav>
+</header>
 
 <!-- Mobile overlay menu -->
 <div class="nav-mobile" id="nav-mobile" aria-hidden="true" role="dialog" aria-label="Mobilní menu">
@@ -139,10 +141,10 @@
     <a href="#contact" data-i18n="nav.contact">Kontakt</a>
   </nav>
   <div class="nav-mobile__lang">
-    <button class="nav-mobile__lang-btn is-active" data-lang="cs">CS</button>
-    <button class="nav-mobile__lang-btn" data-lang="en">EN</button>
-    <button class="nav-mobile__lang-btn" data-lang="de">DE</button>
-    <button class="nav-mobile__lang-btn" data-lang="es">ES</button>
+    <a href="/treasurehunt/" class="nav-mobile__lang-btn is-active" hreflang="cs">CS</a>
+    <a href="/treasurehunt/en/" class="nav-mobile__lang-btn" hreflang="en">EN</a>
+    <a href="/treasurehunt/de/" class="nav-mobile__lang-btn" hreflang="de">DE</a>
+    <a href="/treasurehunt/es/" class="nav-mobile__lang-btn" hreflang="es">ES</a>
   </div>
   <a href="#contact" class="btn btn-primary nav-mobile__cta" data-i18n="nav.cta">Nezávazná poptávka</a>
 </div>

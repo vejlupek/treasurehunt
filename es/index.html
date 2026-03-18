@@ -81,11 +81,13 @@
 
       <!-- Desktop right: lang + CTA -->
       <div class="nav__right">
-        <div class="nav__lang" role="group" aria-label="Selector de idioma">
-          <a href="/treasurehunt/"    class="nav__lang-btn" hreflang="cs">CS</a>
-          <a href="/treasurehunt/en/" class="nav__lang-btn" hreflang="en">EN</a>
-          <a href="/treasurehunt/de/" class="nav__lang-btn" hreflang="de">DE</a>
-          <a href="/treasurehunt/es/" class="nav__lang-btn is-active" hreflang="es" aria-current="true">ES</a>
+        <div class="nav__lang-dropdown">
+          <button class="nav__lang-current" aria-expanded="false">ES <span aria-hidden="true">▾</span></button>
+          <div class="nav__lang-list">
+            <a href="/treasurehunt/" class="nav__lang-option" hreflang="cs">CS</a>
+            <a href="/treasurehunt/en/" class="nav__lang-option" hreflang="en">EN</a>
+            <a href="/treasurehunt/de/" class="nav__lang-option" hreflang="de">DE</a>
+          </div>
         </div>
         <a href="#contact" class="btn btn-primary nav__cta">Solicitar presupuesto</a>
       </div>

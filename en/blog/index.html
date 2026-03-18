@@ -32,152 +32,7 @@
   <!-- Stylesheet -->
   <link rel="stylesheet" href="/treasurehunt/css/style.css">
 
-  <style>
-    /* ── Blog index page styles ── */
-    .blog-hero {
-      padding: 140px 24px 80px;
-      text-align: center;
-      background: linear-gradient(180deg, rgba(201,168,76,0.06) 0%, transparent 100%);
-      border-bottom: 1px solid rgba(201,168,76,0.15);
-    }
-    .blog-hero .breadcrumb {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      font-size: 0.8rem;
-      color: rgba(240,230,211,0.5);
-      margin-bottom: 24px;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-    }
-    .blog-hero .breadcrumb a { color: #c9a84c; text-decoration: none; }
-    .blog-hero .breadcrumb a:hover { text-decoration: underline; }
-    .blog-hero .breadcrumb span { color: rgba(240,230,211,0.3); }
-    .blog-hero h1 {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: clamp(36px, 7vw, 64px);
-      font-weight: 700;
-      color: #f0e6d3;
-      line-height: 1.2;
-      margin-bottom: 20px;
-    }
-    .blog-hero h1 em { color: #c9a84c; font-style: italic; }
-    .blog-hero p {
-      max-width: 600px;
-      margin: 0 auto;
-      color: rgba(240,230,211,0.7);
-      font-size: 1.05rem;
-      line-height: 1.7;
-    }
-    .blog-grid-section {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 80px 24px;
-    }
-    .blog-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-      gap: 32px;
-    }
-    .blog-card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(201,168,76,0.15);
-      border-radius: 10px;
-      overflow: hidden;
-      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-      display: flex;
-      flex-direction: column;
-      text-decoration: none;
-    }
-    .blog-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(201,168,76,0.4);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.4);
-    }
-    .blog-card-img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      display: block;
-    }
-    .blog-card-body {
-      padding: 28px 28px 32px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-    }
-    .blog-card-meta {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 0.75rem;
-      color: rgba(240,230,211,0.45);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 14px;
-    }
-    .blog-card-meta .dot { color: rgba(201,168,76,0.4); }
-    .blog-card h2 {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 1.45rem;
-      font-weight: 600;
-      color: #f0e6d3;
-      line-height: 1.35;
-      margin-bottom: 14px;
-    }
-    .blog-card p {
-      font-size: 0.9rem;
-      color: rgba(240,230,211,0.6);
-      line-height: 1.65;
-      flex: 1;
-      margin-bottom: 20px;
-    }
-    .blog-card-link {
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: #c9a84c;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      margin-top: auto;
-    }
-    .blog-card-link svg { transition: transform 0.2s; }
-    .blog-card:hover .blog-card-link svg { transform: translateX(4px); }
-
-    /* Nav adjustments */
-    .site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(13,17,23,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(201,168,76,0.2); }
-    .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
-    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #f0e6d3; font-weight: 700; font-size: 1.05rem; letter-spacing: 0.02em; }
-    .nav-logo svg { width: 32px; height: 32px; flex-shrink: 0; }
-    .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
-    .nav-links a { color: rgba(240,230,211,0.6); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
-    .nav-links a:hover, .nav-links a.active { color: #c9a84c; }
-    .nav-cta { background: #c9a84c; color: #0d1117 !important; padding: 8px 18px; border-radius: 8px; font-weight: 600; font-size: 0.875rem !important; transition: background 0.2s, transform 0.15s !important; }
-    .nav-cta:hover { background: #dfc078 !important; color: #0d1117 !important; transform: translateY(-1px); }
-
-    /* Footer */
-    .site-footer { border-top: 1px solid rgba(201,168,76,0.15); padding: 48px 24px 32px; }
-    .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: start; }
-    .footer-brand p { color: rgba(240,230,211,0.5); font-size: 0.85rem; margin-top: 8px; max-width: 320px; line-height: 1.6; }
-    .footer-links { display: flex; flex-direction: column; gap: 10px; text-align: right; }
-    .footer-links a { color: rgba(240,230,211,0.5); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
-    .footer-links a:hover { color: #c9a84c; }
-    .footer-bottom { border-top: 1px solid rgba(201,168,76,0.1); margin-top: 32px; padding-top: 24px; max-width: 1200px; margin-left: auto; margin-right: auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
-    .footer-bottom p { font-size: 0.78rem; color: rgba(240,230,211,0.35); }
-    .footer-bottom a { color: rgba(201,168,76,0.6); text-decoration: none; }
-    .footer-bottom a:hover { color: #c9a84c; }
-
-    @media (max-width: 640px) {
-      .blog-grid { grid-template-columns: 1fr; }
-      .nav-links { display: none; }
-      .footer-inner { grid-template-columns: 1fr; }
-      .footer-links { text-align: left; }
-      .footer-bottom { flex-direction: column; align-items: flex-start; }
-    }
-  </style>
+  
 
   <!-- JSON-LD: BreadcrumbList -->
   <script type="application/ld+json">
@@ -204,30 +59,52 @@
 <body>
 
   <!-- ══════════════ HEADER / NAV ══════════════ -->
-  <header class="site-header" role="banner">
-    <div class="nav-inner">
-      <a href="/treasurehunt/en/" class="nav-logo" aria-label="Treasure Hunt Prague – homepage">
-        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <circle cx="32" cy="32" r="30" stroke="#c9a84c" stroke-width="2"/>
-          <circle cx="32" cy="32" r="22" stroke="#c9a84c" stroke-width="1" stroke-dasharray="3 3"/>
-          <polygon points="32,6 35,32 32,30 29,32" fill="#c9a84c"/>
-          <polygon points="32,58 35,32 32,34 29,32" fill="#f0e6d3" opacity="0.5"/>
-          <polygon points="58,32 32,35 34,32 32,29" fill="#f0e6d3" opacity="0.5"/>
-          <polygon points="6,32 32,35 30,32 32,29" fill="#f0e6d3" opacity="0.5"/>
-          <circle cx="32" cy="32" r="3" fill="#c9a84c"/>
-        </svg>
-        Treasure Hunt Prague
+    <header class="nav" role="banner">
+    <div class="nav__inner">
+      <a href="/treasurehunt/en/" class="nav__logo" aria-label="Treasure Hunt Prague – homepage">
+        Treasure Hunt <span>Prague</span>
       </a>
-      <nav aria-label="Main navigation">
-        <ul class="nav-links">
-          <li><a href="/treasurehunt/en/">Home</a></li>
-          <li><a href="/treasurehunt/en/#how-it-works">How It Works</a></li>
-          <li><a href="/treasurehunt/en/blog/" class="active">Blog</a></li>
-          <li><a href="/treasurehunt/en/#contact" class="nav-cta">Get a Quote</a></li>
-        </ul>
+      <nav class="nav__links" aria-label="Main navigation">
+      <a href="/treasurehunt/en/#why" class="nav__link">Why It Works</a>
+      <a href="/treasurehunt/en/#locations" class="nav__link">Locations</a>
+      <a href="/treasurehunt/en/#how" class="nav__link">How It Works</a>
+      <a href="/treasurehunt/en/#reviews" class="nav__link">Reviews</a>
+      <a href="/treasurehunt/en/blog/" class="nav__link">Blog</a>
       </nav>
+      <div class="nav__right">
+        <div class="nav__lang-dropdown">
+          <button class="nav__lang-current" aria-expanded="false">EN <span aria-hidden="true">▾</span></button>
+          <div class="nav__lang-list">
+            <a href="/treasurehunt/blog/" class="nav__lang-option" hreflang="cs">CS</a>
+            <a href="/treasurehunt/de/blog/" class="nav__lang-option" hreflang="de">DE</a>
+            <a href="/treasurehunt/es/blog/" class="nav__lang-option" hreflang="es">ES</a>
+          </div>
+        </div>
+        <a href="/treasurehunt/en/#contact" class="btn btn-primary nav__cta">Book Now</a>
+      </div>
+      <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-mobile">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
+
+  <div class="nav-mobile" id="nav-mobile" role="dialog" aria-label="Mobile menu" aria-hidden="true">
+    <button class="nav-mobile__close" aria-label="Close menu">×</button>
+    <nav class="nav-mobile__links">
+      <a href="/treasurehunt/en/#why" class="nav-mobile__link">Why It Works</a>
+      <a href="/treasurehunt/en/#locations" class="nav-mobile__link">Locations</a>
+      <a href="/treasurehunt/en/#how" class="nav-mobile__link">How It Works</a>
+      <a href="/treasurehunt/en/#reviews" class="nav-mobile__link">Reviews</a>
+      <a href="/treasurehunt/en/blog/" class="nav-mobile__link">Blog</a>
+    </nav>
+    <div class="nav-mobile__lang">
+      <a href="/treasurehunt/blog/" class="nav-mobile__lang-btn" hreflang="cs">CS</a>
+      <a href="/treasurehunt/en/blog/" class="nav-mobile__lang-btn is-active" hreflang="en">EN</a>
+      <a href="/treasurehunt/de/blog/" class="nav-mobile__lang-btn" hreflang="de">DE</a>
+      <a href="/treasurehunt/es/blog/" class="nav-mobile__lang-btn" hreflang="es">ES</a>
+    </div>
+    <a href="/treasurehunt/en/#contact" class="btn btn-primary nav-mobile__cta">Book Your Team Building</a>
+  </div>
 
   <!-- ══════════════ BLOG HERO ══════════════ -->
   <section class="blog-hero">

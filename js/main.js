@@ -1237,7 +1237,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 10. NAV SCROLL EFFECT
   // ---------------------------------------------------------------------------
 
-  const nav = document.querySelector('nav') || document.querySelector('.site-nav');
+  const nav = document.querySelector(".nav");
 
   if (nav) {
     const SCROLL_THRESHOLD = 20;
@@ -1249,5 +1249,39 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll(); // Run once on load in case page is already scrolled
   }
+
+
+  // ---------------------------------------------------------------------------
+  // 11. LANGUAGE DROPDOWN
+  // ---------------------------------------------------------------------------
+
+  const langDropdowns = document.querySelectorAll('.nav__lang-dropdown');
+
+  langDropdowns.forEach(dropdown => {
+    const btn = dropdown.querySelector('.nav__lang-current');
+    if (!btn) return;
+
+    function openDropdown() {
+      dropdown.classList.add('is-open');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+    function closeDropdown() {
+      dropdown.classList.remove('is-open');
+      btn.setAttribute('aria-expanded', 'false');
+    }
+
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      dropdown.classList.contains('is-open') ? closeDropdown() : openDropdown();
+    });
+
+    // Close when clicking outside
+    document.addEventListener('click', () => closeDropdown());
+
+    // Close on Escape
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeDropdown();
+    });
+  });
 
 }); // end DOMContentLoaded
