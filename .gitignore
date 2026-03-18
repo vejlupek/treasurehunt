@@ -1,0 +1,11 @@
+node_modules/
+npm-debug.log
+.DS_Store
+Thumbs.db
+*.log
+
+# Zdrojové fotky (velké originály JPG)
+docs/design/images/
+
+# Claude Code nastavení
+.claude/

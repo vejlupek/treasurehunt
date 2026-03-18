@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tips, inspiration and guides for HR managers and corporate event planners. Discover why Treasure Hunt Prague is the top choice for team building in Prague.">
+  <meta name="robots" content="index, follow">
+
+  <!-- Canonical & hreflang -->
+  <link rel="canonical" href="https://treasurehuntprague.cz/en/blog/">
+  <link rel="alternate" hreflang="cs" href="https://treasurehuntprague.cz/blog/">
+  <link rel="alternate" hreflang="en" href="https://treasurehuntprague.cz/en/blog/">
+  <link rel="alternate" hreflang="de" href="https://treasurehuntprague.cz/de/blog/">
+  <link rel="alternate" hreflang="es" href="https://treasurehuntprague.cz/es/blog/">
+  <link rel="alternate" hreflang="x-default" href="https://treasurehuntprague.cz/en/blog/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Team Building Blog | Treasure Hunt Prague">
+  <meta property="og:description" content="Tips, inspiration and practical guides for HR managers and corporate event planners in Prague.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://treasurehuntprague.cz/en/blog/">
+  <meta property="og:image" content="https://treasurehuntprague.cz/images/optimized/hero-prague-800.webp">
+  <meta property="og:locale" content="en_GB">
+
+  <title>Team Building Blog | Treasure Hunt Prague</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="/css/style.css">
+
+  <style>
+    /* ── Blog index page styles ── */
+    .blog-hero {
+      padding: 140px 24px 80px;
+      text-align: center;
+      background: linear-gradient(180deg, rgba(201,168,76,0.06) 0%, transparent 100%);
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+    }
+    .blog-hero .breadcrumb {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 0.8rem;
+      color: rgba(240,230,211,0.5);
+      margin-bottom: 24px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .blog-hero .breadcrumb a { color: #c9a84c; text-decoration: none; }
+    .blog-hero .breadcrumb a:hover { text-decoration: underline; }
+    .blog-hero .breadcrumb span { color: rgba(240,230,211,0.3); }
+    .blog-hero h1 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(36px, 7vw, 64px);
+      font-weight: 700;
+      color: #f0e6d3;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    .blog-hero h1 em { color: #c9a84c; font-style: italic; }
+    .blog-hero p {
+      max-width: 600px;
+      margin: 0 auto;
+      color: rgba(240,230,211,0.7);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+    .blog-grid-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 24px;
+    }
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 32px;
+    }
+    .blog-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(201,168,76,0.15);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+    }
+    .blog-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(201,168,76,0.4);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+    }
+    .blog-card-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+    .blog-card-body {
+      padding: 28px 28px 32px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .blog-card-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.75rem;
+      color: rgba(240,230,211,0.45);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 14px;
+    }
+    .blog-card-meta .dot { color: rgba(201,168,76,0.4); }
+    .blog-card h2 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: #f0e6d3;
+      line-height: 1.35;
+      margin-bottom: 14px;
+    }
+    .blog-card p {
+      font-size: 0.9rem;
+      color: rgba(240,230,211,0.6);
+      line-height: 1.65;
+      flex: 1;
+      margin-bottom: 20px;
+    }
+    .blog-card-link {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #c9a84c;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: auto;
+    }
+    .blog-card-link svg { transition: transform 0.2s; }
+    .blog-card:hover .blog-card-link svg { transform: translateX(4px); }
+
+    /* Nav adjustments */
+    .site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(13,17,23,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(201,168,76,0.2); }
+    .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #f0e6d3; font-weight: 700; font-size: 1.05rem; letter-spacing: 0.02em; }
+    .nav-logo svg { width: 32px; height: 32px; flex-shrink: 0; }
+    .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
+    .nav-links a { color: rgba(240,230,211,0.6); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: #c9a84c; }
+    .nav-cta { background: #c9a84c; color: #0d1117 !important; padding: 8px 18px; border-radius: 8px; font-weight: 600; font-size: 0.875rem !important; transition: background 0.2s, transform 0.15s !important; }
+    .nav-cta:hover { background: #dfc078 !important; color: #0d1117 !important; transform: translateY(-1px); }
+
+    /* Footer */
+    .site-footer { border-top: 1px solid rgba(201,168,76,0.15); padding: 48px 24px 32px; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: start; }
+    .footer-brand p { color: rgba(240,230,211,0.5); font-size: 0.85rem; margin-top: 8px; max-width: 320px; line-height: 1.6; }
+    .footer-links { display: flex; flex-direction: column; gap: 10px; text-align: right; }
+    .footer-links a { color: rgba(240,230,211,0.5); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+    .footer-links a:hover { color: #c9a84c; }
+    .footer-bottom { border-top: 1px solid rgba(201,168,76,0.1); margin-top: 32px; padding-top: 24px; max-width: 1200px; margin-left: auto; margin-right: auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .footer-bottom p { font-size: 0.78rem; color: rgba(240,230,211,0.35); }
+    .footer-bottom a { color: rgba(201,168,76,0.6); text-decoration: none; }
+    .footer-bottom a:hover { color: #c9a84c; }
+
+    @media (max-width: 640px) {
+      .blog-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .footer-links { text-align: left; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://treasurehuntprague.cz/en/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://treasurehuntprague.cz/en/blog/"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ══════════════ HEADER / NAV ══════════════ -->
+  <header class="site-header" role="banner">
+    <div class="nav-inner">
+      <a href="/en/" class="nav-logo" aria-label="Treasure Hunt Prague – homepage">
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="32" cy="32" r="30" stroke="#c9a84c" stroke-width="2"/>
+          <circle cx="32" cy="32" r="22" stroke="#c9a84c" stroke-width="1" stroke-dasharray="3 3"/>
+          <polygon points="32,6 35,32 32,30 29,32" fill="#c9a84c"/>
+          <polygon points="32,58 35,32 32,34 29,32" fill="#f0e6d3" opacity="0.5"/>
+          <polygon points="58,32 32,35 34,32 32,29" fill="#f0e6d3" opacity="0.5"/>
+          <polygon points="6,32 32,35 30,32 32,29" fill="#f0e6d3" opacity="0.5"/>
+          <circle cx="32" cy="32" r="3" fill="#c9a84c"/>
+        </svg>
+        Treasure Hunt Prague
+      </a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="/en/">Home</a></li>
+          <li><a href="/en/#how-it-works">How It Works</a></li>
+          <li><a href="/en/blog/" class="active">Blog</a></li>
+          <li><a href="/en/#contact" class="nav-cta">Get a Quote</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ══════════════ BLOG HERO ══════════════ -->
+  <section class="blog-hero">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/en/">Home</a>
+      <span aria-hidden="true">›</span>
+      <span aria-current="page">Blog</span>
+    </nav>
+    <h1>Team Building <em>Blog</em></h1>
+    <p>Tips, inspiration and guides for HR managers and corporate event planners looking to create memorable experiences in Prague.</p>
+  </section>
+
+  <!-- ══════════════ ARTICLE GRID ══════════════ -->
+  <main id="main-content">
+    <section class="blog-grid-section">
+      <div class="blog-grid">
+
+        <!-- Article 1 -->
+        <a href="/en/blog/best-team-building-prague/" class="blog-card">
+          <img src="/images/optimized/team-action-2-800.webp" alt="Team in action during Prague treasure hunt" class="blog-card-img" loading="lazy" width="800" height="450">
+          <div class="blog-card-body">
+            <div class="blog-card-meta">
+              <time datetime="2025-01-15">Jan 15, 2025</time>
+              <span class="dot">·</span>
+              <span>6 min read</span>
+            </div>
+            <h2>Why Treasure Hunt Is the Best Team Building in Prague</h2>
+            <p>Looking for team building that everyone actually enjoys? Discover why hundreds of companies choose Treasure Hunt Prague every year.</p>
+            <span class="blog-card-link">
+              Read more
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
+          </div>
+        </a>
+
+        <!-- Article 2 -->
+        <a href="/en/blog/how-to-choose-team-building/" class="blog-card">
+          <img src="/images/optimized/team-group-2-800.webp" alt="Diverse team group photo" class="blog-card-img" loading="lazy" width="800" height="450">
+          <div class="blog-card-body">
+            <div class="blog-card-meta">
+              <time datetime="2025-01-22">Jan 22, 2025</time>
+              <span class="dot">·</span>
+              <span>7 min read</span>
+            </div>
+            <h2>How to Choose Team Building for a Diverse Team</h2>
+            <p>A practical guide for HR managers: how to find a team building activity that works for everyone — regardless of age, fitness, or background.</p>
+            <span class="blog-card-link">
+              Read more
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
+          </div>
+        </a>
+
+        <!-- Article 3 -->
+        <a href="/en/blog/team-building-prague-guide/" class="blog-card">
+          <img src="/images/optimized/prague-streets-800.webp" alt="Prague streets and architecture" class="blog-card-img" loading="lazy" width="800" height="450">
+          <div class="blog-card-body">
+            <div class="blog-card-meta">
+              <time datetime="2025-02-05">Feb 5, 2025</time>
+              <span class="dot">·</span>
+              <span>8 min read</span>
+            </div>
+            <h2>Team Building in Prague: The Complete Corporate Guide</h2>
+            <p>Planning corporate team building in Prague? Activity types, location tips, how to choose the right provider, and what to budget.</p>
+            <span class="blog-card-link">
+              Read more
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
+          </div>
+        </a>
+
+        <!-- Article 4 -->
+        <a href="/en/blog/what-makes-good-team-building/" class="blog-card">
+          <img src="/images/optimized/team-solving-clues-1-800.webp" alt="Team solving clues together" class="blog-card-img" loading="lazy" width="800" height="450">
+          <div class="blog-card-body">
+            <div class="blog-card-meta">
+              <time datetime="2025-02-12">Feb 12, 2025</time>
+              <span class="dot">·</span>
+              <span>5 min read</span>
+            </div>
+            <h2>What Makes Great Team Building? 7 Things to Look For</h2>
+            <p>How do you know if a team building activity is worth the investment? 7 concrete signs that separate outstanding events from average entertainment.</p>
+            <span class="blog-card-link">
+              Read more
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
+          </div>
+        </a>
+
+        <!-- Article 5 -->
+        <a href="/en/blog/hidden-stories-prague/" class="blog-card">
+          <img src="/images/optimized/prague-architecture-800.webp" alt="Prague historical architecture" class="blog-card-img" loading="lazy" width="800" height="450">
+          <div class="blog-card-body">
+            <div class="blog-card-meta">
+              <time datetime="2025-02-20">Feb 20, 2025</time>
+              <span class="dot">·</span>
+              <span>6 min read</span>
+            </div>
+            <h2>Hidden Stories of Prague: What Your Team Will Discover on the Treasure Hunt</h2>
+            <p>Prague hides hundreds of fascinating stories behind its facades. Discover what secrets your team will uncover on the Treasure Hunt.</p>
+            <span class="blog-card-link">
+              Read more
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
+          </div>
+        </a>
+
+        <!-- Article 6 -->
+        <a href="/en/blog/movie-locations-prague/" class="blog-card">
+          <img src="/images/optimized/location-movie-800.webp" alt="Prague as a film location" class="blog-card-img" loading="lazy" width="800" height="450">
+          <div class="blog-card-body">
+            <div class="blog-card-meta">
+              <time datetime="2025-03-05">Mar 5, 2025</time>
+              <span class="dot">·</span>
+              <span>7 min read</span>
+            </div>
+            <h2>Where World Films Were Shot in Prague: A Movie Locations Guide</h2>
+            <p>Amadeus, Mission Impossible, Kafka and dozens more were filmed in Prague. A guide to the most famous movie locations in the Czech capital.</p>
+            <span class="blog-card-link">
+              Read more
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
+          </div>
+        </a>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ══════════════ FOOTER ══════════════ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="/en/" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:#f0e6d3;font-weight:700;font-size:1rem;letter-spacing:0.02em;">
+          <svg width="28" height="28" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+            <circle cx="32" cy="32" r="30" stroke="#c9a84c" stroke-width="2"/>
+            <polygon points="32,6 35,32 32,30 29,32" fill="#c9a84c"/>
+            <circle cx="32" cy="32" r="3" fill="#c9a84c"/>
+          </svg>
+          Treasure Hunt Prague
+        </a>
+        <p>Award-winning corporate team building in the heart of Prague. Available in Czech, English, German and Spanish.</p>
+      </div>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="/en/">Home</a>
+        <a href="/en/#how-it-works">How It Works</a>
+        <a href="/en/blog/">Blog</a>
+        <a href="/en/#contact">Contact</a>
+        <a href="/blog/">Česky</a>
+        <a href="/de/blog/">Deutsch</a>
+        <a href="/es/blog/">Español</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="footer-year">2025</span> Treasure Hunt Prague. All rights reserved.</p>
+      <p><a href="/">treasurehuntprague.cz</a></p>
+    </div>
+  </footer>
+
+  <script src="/js/main.js" defer></script>
+  <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+
+</body>
+</html>

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="de" data-lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teambuilding-Blog | Treasure Hunt Prague</title>
+  <meta name="description" content="Praktische Tipps, Inspiration und Leitfäden rund um Teambuilding in Prag. Unser Blog für HR-Manager und Organisatoren von Firmenveranstaltungen.">
+  <link rel="canonical" href="https://treasurehuntprague.cz/de/blog/">
+  <link rel="alternate" hreflang="cs" href="https://treasurehuntprague.cz/blog/">
+  <link rel="alternate" hreflang="en" href="https://treasurehuntprague.cz/en/blog/">
+  <link rel="alternate" hreflang="de" href="https://treasurehuntprague.cz/de/blog/">
+  <link rel="alternate" hreflang="es" href="https://treasurehuntprague.cz/es/blog/">
+  <link rel="alternate" hreflang="x-default" href="https://treasurehuntprague.cz/blog/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Startseite",
+        "item": "https://treasurehuntprague.cz/de/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://treasurehuntprague.cz/de/blog/"
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .blog-hero {
+      padding-top: 140px;
+      padding-bottom: 64px;
+      text-align: center;
+      background: linear-gradient(180deg, rgba(201,168,76,0.04) 0%, transparent 100%);
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+    }
+    .blog-hero__label {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-gold);
+      margin-bottom: 20px;
+    }
+    .blog-hero__title {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 5vw, 64px);
+      font-weight: 600;
+      color: var(--color-parchment);
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+    .blog-hero__subtitle {
+      font-size: 18px;
+      color: var(--color-muted);
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+    .blog-index-section {
+      padding: 72px 0 96px;
+    }
+    .blog-index-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+      margin-top: 0;
+    }
+    @media (min-width: 640px) {
+      .blog-index-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 1024px) {
+      .blog-index-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    .blog-index-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .blog-index-meta__count {
+      font-size: 13px;
+      color: var(--color-muted);
+    }
+    .blog-pagination {
+      text-align: center;
+      margin-top: 56px;
+      font-size: 14px;
+      color: var(--color-muted);
+      padding: 16px 24px;
+      border: 1px solid rgba(201,168,76,0.15);
+      border-radius: 4px;
+      display: inline-block;
+    }
+    .blog-pagination-wrap {
+      text-align: center;
+      margin-top: 56px;
+    }
+    .breadcrumb-bar {
+      padding: 20px 0 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" role="banner">
+    <div class="nav__inner">
+      <a href="/de/" class="nav__logo" aria-label="Treasure Hunt Prague – Startseite">
+        Treasure Hunt <span>Prague</span>
+      </a>
+
+      <nav aria-label="Hauptnavigation" class="nav__links">
+        <a href="/de/#warum-treasure-hunt" class="nav__link">Warum Treasure Hunt</a>
+        <a href="/de/#wie-es-funktioniert" class="nav__link">Wie es funktioniert</a>
+        <a href="/de/#routen" class="nav__link">Routen</a>
+        <a href="/de/#bewertungen" class="nav__link">Bewertungen</a>
+        <a href="/de/blog/" class="nav__link" aria-current="page">Blog</a>
+      </nav>
+
+      <div class="nav__right">
+        <div class="nav__lang" aria-label="Sprachauswahl">
+          <a href="/blog/" class="nav__lang-btn">CS</a>
+          <a href="/en/blog/" class="nav__lang-btn">EN</a>
+          <a href="/de/blog/" class="nav__lang-btn is-active" aria-current="true">DE</a>
+          <a href="/es/blog/" class="nav__lang-btn">ES</a>
+        </div>
+        <a href="/de/#kontakt" class="btn btn-primary nav__cta">Anfragen</a>
+      </div>
+
+      <button class="nav__hamburger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="nav-mobile" id="mobile-menu" role="dialog" aria-label="Mobiles Menü">
+    <button class="nav-mobile__close" aria-label="Menü schließen">&times;</button>
+    <nav class="nav-mobile__links">
+      <a href="/de/#warum-treasure-hunt" class="nav-mobile__link">Warum Treasure Hunt</a>
+      <a href="/de/#wie-es-funktioniert" class="nav-mobile__link">Wie es funktioniert</a>
+      <a href="/de/#routen" class="nav-mobile__link">Routen</a>
+      <a href="/de/#bewertungen" class="nav-mobile__link">Bewertungen</a>
+      <a href="/de/blog/" class="nav-mobile__link">Blog</a>
+    </nav>
+    <div class="nav-mobile__lang">
+      <a href="/blog/" class="nav-mobile__lang-btn">CS</a>
+      <a href="/en/blog/" class="nav-mobile__lang-btn">EN</a>
+      <a href="/de/blog/" class="nav-mobile__lang-btn is-active">DE</a>
+      <a href="/es/blog/" class="nav-mobile__lang-btn">ES</a>
+    </div>
+    <a href="/de/#kontakt" class="btn btn-primary nav-mobile__cta">Teambuilding anfragen</a>
+  </div>
+
+  <main id="main-content">
+
+    <!-- BLOG HERO -->
+    <section class="blog-hero">
+      <div class="container">
+        <nav class="breadcrumb breadcrumb-bar" aria-label="Brotkrumen-Navigation">
+          <a href="/de/" class="breadcrumb__link">Startseite</a>
+          <span class="breadcrumb__sep" aria-hidden="true">›</span>
+          <span aria-current="page">Blog</span>
+        </nav>
+        <p class="blog-hero__label">Teambuilding-Ratgeber</p>
+        <h1 class="blog-hero__title">Teambuilding-Blog</h1>
+        <p class="blog-hero__subtitle">Praktische Ratschläge, Inspiration und Tipps für HR-Manager und Organisatoren von Firmenveranstaltungen in Prag.</p>
+      </div>
+    </section>
+
+    <!-- ARTICLE GRID -->
+    <section class="blog-index-section">
+      <div class="container">
+        <div class="blog-index-meta">
+          <p class="blog-index-meta__count">6 Artikel</p>
+        </div>
+
+        <div class="blog-index-grid">
+
+          <!-- Karte 1 -->
+          <article class="blog-card fade-up stagger-1">
+            <a href="/de/blog/bestes-teambuilding-prag/" class="blog-card__image" aria-label="Zum Artikel: Warum die Schnitzeljagd das beste Teambuilding in Prag ist">
+              <img
+                src="/images/optimized/team-action-2-800.webp"
+                srcset="/images/optimized/team-action-2-400.webp 400w, /images/optimized/team-action-2-800.webp 800w"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                alt="Team löst Rätsel auf den Straßen Prags"
+                width="800" height="450"
+                loading="lazy">
+            </a>
+            <div class="blog-card__body">
+              <span class="blog-card__tag">Teambuilding</span>
+              <h2 class="blog-card__title">
+                <a href="/de/blog/bestes-teambuilding-prag/">Warum die Schnitzeljagd das beste Teambuilding in Prag ist</a>
+              </h2>
+              <p class="blog-card__excerpt">Suchen Sie Teambuilding in Prag, das allen wirklich Spaß macht — von Praktikanten bis zur Geschäftsführung? Erfahren Sie, warum hunderte Unternehmen jedes Jahr die Treasure Hunt Prague wählen.</p>
+              <div class="blog-card__footer">
+                <time class="blog-card__date" datetime="2025-01-15">15. Januar 2025</time>
+                <a href="/de/blog/bestes-teambuilding-prag/" class="blog-card__read-more">Weiterlesen →</a>
+              </div>
+              <p style="font-size:12px;color:var(--color-muted);margin-top:8px;">6 Min. Lesezeit</p>
+            </div>
+          </article>
+
+          <!-- Karte 2 -->
+          <article class="blog-card fade-up stagger-2">
+            <a href="/de/blog/teambuilding-auswaehlen/" class="blog-card__image" aria-label="Zum Artikel: Teambuilding für eine vielfältige Gruppe auswählen">
+              <img
+                src="/images/optimized/team-group-2-800.webp"
+                srcset="/images/optimized/team-group-2-400.webp 400w, /images/optimized/team-group-2-800.webp 800w"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                alt="Diverse Gruppe von Kollegen arbeitet gemeinsam im Freien"
+                width="800" height="450"
+                loading="lazy">
+            </a>
+            <div class="blog-card__body">
+              <span class="blog-card__tag">HR-Leitfaden</span>
+              <h2 class="blog-card__title">
+                <a href="/de/blog/teambuilding-auswaehlen/">Teambuilding für eine vielfältige Gruppe auswählen</a>
+              </h2>
+              <p class="blog-card__excerpt">Praktischer Leitfaden für HR-Manager: Wie finden Sie eine Aktivität, die für alle funktioniert — unabhängig von Alter, Fitness oder Hintergrund?</p>
+              <div class="blog-card__footer">
+                <time class="blog-card__date" datetime="2025-01-22">22. Januar 2025</time>
+                <a href="/de/blog/teambuilding-auswaehlen/" class="blog-card__read-more">Weiterlesen →</a>
+              </div>
+              <p style="font-size:12px;color:var(--color-muted);margin-top:8px;">7 Min. Lesezeit</p>
+            </div>
+          </article>
+
+          <!-- Karte 3 -->
+          <article class="blog-card fade-up stagger-3">
+            <a href="/de/blog/teambuilding-prag-guide/" class="blog-card__image" aria-label="Zum Artikel: Teambuilding in Prag: Der vollständige Leitfaden für Unternehmen">
+              <img
+                src="/images/optimized/prague-streets-800.webp"
+                srcset="/images/optimized/prague-streets-400.webp 400w, /images/optimized/prague-streets-800.webp 800w"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                alt="Historische Straßen Prags an einem sonnigen Tag"
+                width="800" height="450"
+                loading="lazy">
+            </a>
+            <div class="blog-card__body">
+              <span class="blog-card__tag">Prag</span>
+              <h2 class="blog-card__title">
+                <a href="/de/blog/teambuilding-prag-guide/">Teambuilding in Prag: Der vollständige Leitfaden für Unternehmen</a>
+              </h2>
+              <p class="blog-card__excerpt">Planen Sie Firmen-Teambuilding in Prag? Vollständiger Leitfaden: Aktivitätstypen, Standort-Tipps, wie Sie den richtigen Anbieter finden.</p>
+              <div class="blog-card__footer">
+                <time class="blog-card__date" datetime="2025-02-05">5. Februar 2025</time>
+                <a href="/de/blog/teambuilding-prag-guide/" class="blog-card__read-more">Weiterlesen →</a>
+              </div>
+              <p style="font-size:12px;color:var(--color-muted);margin-top:8px;">8 Min. Lesezeit</p>
+            </div>
+          </article>
+
+          <!-- Karte 4 -->
+          <article class="blog-card fade-up stagger-1">
+            <a href="/de/blog/gutes-teambuilding/" class="blog-card__image" aria-label="Zum Artikel: Was macht gutes Teambuilding aus? 7 Kriterien">
+              <img
+                src="/images/optimized/team-solving-clues-1-800.webp"
+                srcset="/images/optimized/team-solving-clues-1-400.webp 400w, /images/optimized/team-solving-clues-1-800.webp 800w"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                alt="Team löst gemeinsam Hinweise auf einem Blatt Papier"
+                width="800" height="450"
+                loading="lazy">
+            </a>
+            <div class="blog-card__body">
+              <span class="blog-card__tag">Tipps</span>
+              <h2 class="blog-card__title">
+                <a href="/de/blog/gutes-teambuilding/">Was macht gutes Teambuilding aus? 7 Kriterien</a>
+              </h2>
+              <p class="blog-card__excerpt">Wie erkennen Sie, ob eine Teambuilding-Aktivität die Investition wert ist? 7 konkrete Merkmale, die hervorragendes von durchschnittlichem Teambuilding unterscheiden.</p>
+              <div class="blog-card__footer">
+                <time class="blog-card__date" datetime="2025-02-12">12. Februar 2025</time>
+                <a href="/de/blog/gutes-teambuilding/" class="blog-card__read-more">Weiterlesen →</a>
+              </div>
+              <p style="font-size:12px;color:var(--color-muted);margin-top:8px;">5 Min. Lesezeit</p>
+            </div>
+          </article>
+
+          <!-- Karte 5 -->
+          <article class="blog-card fade-up stagger-2">
+            <a href="/de/blog/verborgene-geschichten-prag/" class="blog-card__image" aria-label="Zum Artikel: Verborgene Geschichten Prags: Was Ihr Team bei der Schnitzeljagd entdeckt">
+              <img
+                src="/images/optimized/prague-architecture-800.webp"
+                srcset="/images/optimized/prague-architecture-400.webp 400w, /images/optimized/prague-architecture-800.webp 800w"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                alt="Geheimnisvolle Prager Architektur in der Dämmerung"
+                width="800" height="450"
+                loading="lazy">
+            </a>
+            <div class="blog-card__body">
+              <span class="blog-card__tag">Prag</span>
+              <h2 class="blog-card__title">
+                <a href="/de/blog/verborgene-geschichten-prag/">Verborgene Geschichten Prags: Was Ihr Team bei der Schnitzeljagd entdeckt</a>
+              </h2>
+              <p class="blog-card__excerpt">Prag verbirgt hunderte faszinierende Geschichten hinter seinen Fassaden. Entdecken Sie, welche Geheimnisse Ihr Team bei der Schnitzeljagd aufdeckt.</p>
+              <div class="blog-card__footer">
+                <time class="blog-card__date" datetime="2025-02-20">20. Februar 2025</time>
+                <a href="/de/blog/verborgene-geschichten-prag/" class="blog-card__read-more">Weiterlesen →</a>
+              </div>
+              <p style="font-size:12px;color:var(--color-muted);margin-top:8px;">6 Min. Lesezeit</p>
+            </div>
+          </article>
+
+          <!-- Karte 6 -->
+          <article class="blog-card fade-up stagger-3">
+            <a href="/de/blog/filmlocations-prag/" class="blog-card__image" aria-label="Zum Artikel: Wo Weltfilme in Prag gedreht wurden: Ein Filmlocations-Guide">
+              <img
+                src="/images/optimized/location-movie-800.webp"
+                srcset="/images/optimized/location-movie-400.webp 400w, /images/optimized/location-movie-800.webp 800w"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                alt="Historische Prager Location, die in Weltfilmen verwendet wurde"
+                width="800" height="450"
+                loading="lazy">
+            </a>
+            <div class="blog-card__body">
+              <span class="blog-card__tag">Kultur</span>
+              <h2 class="blog-card__title">
+                <a href="/de/blog/filmlocations-prag/">Wo Weltfilme in Prag gedreht wurden: Ein Filmlocations-Guide</a>
+              </h2>
+              <p class="blog-card__excerpt">Amadeus, Mission Impossible, Kafka und Dutzende weitere Weltfilme wurden in Prag gedreht. Ein Leitfaden zu den bekanntesten Filmlocations der tschechischen Hauptstadt.</p>
+              <div class="blog-card__footer">
+                <time class="blog-card__date" datetime="2025-03-05">5. März 2025</time>
+                <a href="/de/blog/filmlocations-prag/" class="blog-card__read-more">Weiterlesen →</a>
+              </div>
+              <p style="font-size:12px;color:var(--color-muted);margin-top:8px;">7 Min. Lesezeit</p>
+            </div>
+          </article>
+
+        </div><!-- /.blog-index-grid -->
+
+        <div class="blog-pagination-wrap">
+          <span class="blog-pagination">Seite 1 / 1</span>
+        </div>
+
+      </div><!-- /.container -->
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a href="/de/" class="footer__logo">Treasure Hunt <span>Prague</span></a>
+          <p class="footer__tagline">Das beste Teambuilding in Prag. Gruppen von 9 bis 300 Personen. Ein Erlebnis, das man nicht vergisst.</p>
+        </div>
+        <div>
+          <p class="footer__nav-title">Navigation</p>
+          <ul class="footer__nav-list">
+            <li><a href="/de/" class="footer__nav-link">Startseite</a></li>
+            <li><a href="/de/#warum-treasure-hunt" class="footer__nav-link">Warum Treasure Hunt</a></li>
+            <li><a href="/de/#wie-es-funktioniert" class="footer__nav-link">Wie es funktioniert</a></li>
+            <li><a href="/de/#routen" class="footer__nav-link">Routen</a></li>
+            <li><a href="/de/blog/" class="footer__nav-link">Blog</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__nav-title">Kontakt</p>
+          <ul class="footer__nav-list">
+            <li><a href="/de/#kontakt" class="footer__nav-link">Teambuilding anfragen</a></li>
+            <li><a href="mailto:info@treasurehuntprague.cz" class="footer__nav-link">info@treasurehuntprague.cz</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copyright">&copy; <span id="footer-year">2025</span> Treasure Hunt Prague. Alle Rechte vorbehalten.</p>
+        <nav class="footer__legal" aria-label="Rechtliche Dokumente">
+          <a href="/de/datenschutz/" class="footer__legal-link">Datenschutzerklärung</a>
+          <a href="/de/agb/" class="footer__legal-link">AGB</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js" defer></script>
+  <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

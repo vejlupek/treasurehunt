@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="cs" data-lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog o teambuildingu | Treasure Hunt Prague</title>
+  <meta name="description" content="Praktické tipy, inspirace a průvodce světem teambuildingu v Praze. Čtěte náš blog pro HR manažery a organizátory firemních akcí.">
+  <link rel="canonical" href="https://treasurehuntprague.cz/blog/">
+  <link rel="alternate" hreflang="cs" href="https://treasurehuntprague.cz/blog/">
+  <link rel="alternate" hreflang="en" href="https://treasurehuntprague.cz/en/blog/">
+  <link rel="alternate" hreflang="de" href="https://treasurehuntprague.cz/de/blog/">
+  <link rel="alternate" hreflang="es" href="https://treasurehuntprague.cz/es/blog/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Domů",
+        "item": "https://treasurehuntprague.cz/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://treasurehuntprague.cz/blog/"
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .blog-hero {
+      padding-top: 140px;
+      padding-bottom: 64px;
+      text-align: center;
+      background: linear-gradient(180deg, rgba(201,168,76,0.04) 0%, transparent 100%);
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+    }
+    .blog-hero__label {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-gold);
+      margin-bottom: 20px;
+    }
+    .blog-hero__title {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 5vw, 64px);
+      font-weight: 600;
+      color: var(--color-parchment);
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+    .blog-hero__subtitle {
+      font-size: 18px;
+      color: var(--color-muted);
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+    .blog-index-section {
+      padding: 72px 0 96px;
+    }
+    .blog-index-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+      margin-top: 0;
+    }
+    @media (min-width: 640px) {
+      .blog-index-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 1024px) {
+      .blog-index-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    .blog-index-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .blog-index-meta__count {
+      font-size: 13px;
+      color: var(--color-muted);
+    }
+    .blog-pagination {
+      text-align: center;
+      margin-top: 56px;
+      font-size: 14px;
+      color: var(--color-muted);
+      padding: 16px 24px;
+      border: 1px solid rgba(201,168,76,0.15);
+      border-radius: 4px;
+      display: inline-block;
+    }
+    .blog-pagination-wrap {
+      text-align: center;
+      margin-top: 56px;
+    }
+    .breadcrumb-bar {
+      padding: 20px 0 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══════════════════════════ NAV ══════════════════════════ -->
+  <header class="nav" role="banner">
+    <div class="nav__inner">
+      <a href="/" class="nav__logo" aria-label="Treasure Hunt Prague – domovská stránka">
+        Treasure Hunt <span>Prague</span>
+      </a>
+
+      <nav aria-label="Hlavní navigace" class="nav__links">
+        <a href="/#proc-treasure-hunt" class="nav__link">Proč Treasure Hunt</a>
+        <a href="/#jak-to-funguje" class="nav__link">Jak to funguje</a>
+        <a href="/#lokace" class="nav__link">Lokace</a>
+        <a href="/#galerie" class="nav__link">Galerie</a>
+        <a href="/blog/" class="nav__link" aria-current="page">Blog</a>
+      </nav>
+
+      <div class="nav__right">
+        <div class="nav__lang" aria-label="Výběr jazyka">
+          <a href="/blog/" class="nav__lang-btn is-active" aria-current="true">CS</a>
+          <a href="/en/blog/" class="nav__lang-btn">EN</a>
+          <a href="/de/blog/" class="nav__lang-btn">DE</a>
+          <a href="/es/blog/" class="nav__lang-btn">ES</a>
+        </div>
+        <a href="/#kontakt" class="btn btn-primary nav__cta">Rezervovat</a>
+      </div>
+
+      <button class="nav__hamburger" aria-label="Otevřít menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="nav-mobile" id="mobile-menu" role="dialog" aria-label="Mobilní menu">
+    <button class="nav-mobile__close" aria-label="Zavřít menu">&times;</button>
+    <nav class="nav-mobile__links">
+      <a href="/#proc-treasure-hunt" class="nav-mobile__link">Proč Treasure Hunt</a>
+      <a href="/#jak-to-funguje" class="nav-mobile__link">Jak to funguje</a>
+      <a href="/#lokace" class="nav-mobile__link">Lokace</a>
+      <a href="/#galerie" class="nav-mobile__link">Galerie</a>
+      <a href="/blog/" class="nav-mobile__link">Blog</a>
+    </nav>
+    <div class="nav-mobile__lang">
+      <a href="/blog/" class="nav-mobile__lang-btn is-active">CS</a>
+      <a href="/en/blog/" class="nav-mobile__lang-btn">EN</a>
+      <a href="/de/blog/" class="nav-mobile__lang-btn">DE</a>
+      <a href="/es/blog/" class="nav-mobile__lang-btn">ES</a>
+    </div>
+    <a href="/#kontakt" class="btn btn-primary nav-mobile__cta">Rezervovat teambuilding</a>
+  </div>
+
+  <main id="main-content">
+
+    <!-- ══════════════════════ BLOG HERO ══════════════════════ -->
+    <section class="blog-hero">
+      <div class="container">
+        <nav class="breadcrumb breadcrumb-bar" aria-label="Drobečková navigace">
+          <a href="/" class="breadcrumb__link">Domů</a>
+          <span class="breadcrumb__sep" aria-hidden="true">›</span>
+          <span aria-current="page">Blog</span>
+        </nav>
+        <p class="blog-hero__label">Průvodce teambuildingem</p>
+        <h1 class="blog-hero__title">Blog o teambuildingu</h1>
+        <p class="blog-hero__subtitle">Praktické rady, inspirace a tipy pro HR manažery a organizátory firemních akcí v Praze.</p>
+      </div>
+    </section>
+
+    <!-- ══════════════════════ ARTICLE GRID ══════════════════════ -->
+    <section class="blog-index-section">
+      <div class="container">
+        <div class="blog-index-meta">
+          <p class="blog-index-meta__count">6 článků</p>
+        </div>
+
+        <div class="blog-index-grid">
+
+          <!-- Card 1 -->
+          <article class="blog-card fade-up stagger-1">
+            <a href="/blog/nejlepsi-teambuilding-v-praze/" class="blog-card__image" aria-label="Přejít na článek: Proč je Treasure Hunt nejlepší teambuilding v Praze">
+              <img
+                src="/images/optimized/team-action-2-800.webp"
+                srcset="/images/optimized/team-action-2-400.webp 400w, /images/optimized/team-action-2-800.webp 800w"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                alt="Tým řeší hádanky na ulicích Prahy"
+                width="800" height="450"
+                loading="lazy">
+            </a>
+            <div class="blog-card__body">
+              <span class="blog-card__tag">Teambuilding</span>
+              <h2 class="blog-card__title">
+                <a href="/blog/nejlepsi-teambuilding-v-praze/">Proč je Treasure Hunt nejlepší teambuilding v Praze</a>
+              </h2>
+              <p class="blog-card__excerpt">Hledáte teambuilding, který si užijí opravdu všichni — od stážistů po ředitele? Zjistěte, proč si Treasure Hunt Prague vybírají stovky firem každý rok.</p>
+              <div class="blog-card__footer">
+                <time class="blog-card__date" datetime="2025-01-15">15. ledna 2025</time>
+                <a href="/blog/nejlepsi-teambuilding-v-praze/" class="blog-card__read-more">Číst dál →</a>
+              </div>
+              <p style="font-size:12px;color:var(--color-muted);margin-top:8px;">6 min čtení</p>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="blog-card fade-up stagger-2">
+            <a href="/blog/jak-vybrat-teambuilding/" class="blog-card__image" aria-label="Přejít na článek: Jak vybrat teambuilding pro různorodý tým">
+              <img
+                src="/images/optimized/team-group-2-800.webp"
+                srcset="/images/optimized/team-group-2-400.webp 400w, /images/optimized/team-group-2-800.webp 800w"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                alt="Různorodá skupina kolegů spolupracuje venku"
+                width="800" height="450"
+                loading="lazy">
+            </a>
+            <div class="blog-card__body">
+              <span class="blog-card__tag">HR průvodce</span>
+              <h2 class="blog-card__title">
+                <a href="/blog/jak-vybrat-teambuilding/">Jak vybrat teambuilding pro různorodý tým</a>
+              </h2>
+              <p class="blog-card__excerpt">Praktický průvodce pro HR manažery: jak najít aktivitu, která bude fungovat pro každého — bez ohledu na věk, kondici nebo záliby.</p>
+              <div class="blog-card__footer">
+                <time class="blog-card__date" datetime="2025-01-22">22. ledna 2025</time>
+                <a href="/blog/jak-vybrat-teambuilding/" class="blog-card__read-more">Číst dál →</a>
+              </div>
+              <p style="font-size:12px;color:var(--color-muted);margin-top:8px;">7 min čtení</p>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="blog-card fade-up stagger-3">
+            <a href="/blog/pruvodce-teambuilding-praha/" class="blog-card__image" aria-label="Přejít na článek: Teambuilding v Praze: Kompletní průvodce pro firmy">
+              <img
+                src="/images/optimized/prague-streets-800.webp"
+                srcset="/images/optimized/prague-streets-400.webp 400w, /images/optimized/prague-streets-800.webp 800w"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                alt="Historické ulice Prahy za slunečného dne"
+                width="800" height="450"
+                loading="lazy">
+            </a>
+            <div class="blog-card__body">
+              <span class="blog-card__tag">Praha</span>
+              <h2 class="blog-card__title">
+                <a href="/blog/pruvodce-teambuilding-praha/">Teambuilding v Praze: Kompletní průvodce pro firmy</a>
+              </h2>
+              <p class="blog-card__excerpt">Plánujete firemní teambuilding v Praze? Kompletní průvodce: typy aktivit, tipy na výběr lokace a jak vybrat správného dodavatele.</p>
+              <div class="blog-card__footer">
+                <time class="blog-card__date" datetime="2025-02-05">5. února 2025</time>
+                <a href="/blog/pruvodce-teambuilding-praha/" class="blog-card__read-more">Číst dál →</a>
+              </div>
+              <p style="font-size:12px;color:var(--color-muted);margin-top:8px;">8 min čtení</p>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="blog-card fade-up stagger-1">
+            <a href="/blog/co-dela-dobry-teambuilding/" class="blog-card__image" aria-label="Přejít na článek: Co dělá dobrý teambuilding? 7 věcí, na které se zaměřit">
+              <img
+                src="/images/optimized/team-solving-clues-1-800.webp"
+                srcset="/images/optimized/team-solving-clues-1-400.webp 400w, /images/optimized/team-solving-clues-1-800.webp 800w"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                alt="Tým společně rozluštuje vodítka na papíře"
+                width="800" height="450"
+                loading="lazy">
+            </a>
+            <div class="blog-card__body">
+              <span class="blog-card__tag">Tipy</span>
+              <h2 class="blog-card__title">
+                <a href="/blog/co-dela-dobry-teambuilding/">Co dělá dobrý teambuilding? 7 věcí, na které se zaměřit</a>
+              </h2>
+              <p class="blog-card__excerpt">Jak poznat, že teambuilding stojí za investici? 7 konkrétních znaků, které odlišují skvělý teambuilding od průměrné zábavy.</p>
+              <div class="blog-card__footer">
+                <time class="blog-card__date" datetime="2025-02-12">12. února 2025</time>
+                <a href="/blog/co-dela-dobry-teambuilding/" class="blog-card__read-more">Číst dál →</a>
+              </div>
+              <p style="font-size:12px;color:var(--color-muted);margin-top:8px;">5 min čtení</p>
+            </div>
+          </article>
+
+          <!-- Card 5 -->
+          <article class="blog-card fade-up stagger-2">
+            <a href="/blog/skryte-pribehy-prahy/" class="blog-card__image" aria-label="Přejít na článek: Skryté příběhy Prahy">
+              <img
+                src="/images/optimized/prague-architecture-800.webp"
+                srcset="/images/optimized/prague-architecture-400.webp 400w, /images/optimized/prague-architecture-800.webp 800w"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                alt="Tajemná pražská architektura při soumraku"
+                width="800" height="450"
+                loading="lazy">
+            </a>
+            <div class="blog-card__body">
+              <span class="blog-card__tag">Praha</span>
+              <h2 class="blog-card__title">
+                <a href="/blog/skryte-pribehy-prahy/">Skryté příběhy Prahy: Co váš tým objeví na Treasure Huntu</a>
+              </h2>
+              <p class="blog-card__excerpt">Praha skrývá stovky fascinujících příběhů za svými fasádami. Zjistěte, jaká tajemství odhalí váš tým při Treasure Huntu.</p>
+              <div class="blog-card__footer">
+                <time class="blog-card__date" datetime="2025-02-20">20. února 2025</time>
+                <a href="/blog/skryte-pribehy-prahy/" class="blog-card__read-more">Číst dál →</a>
+              </div>
+              <p style="font-size:12px;color:var(--color-muted);margin-top:8px;">6 min čtení</p>
+            </div>
+          </article>
+
+          <!-- Card 6 -->
+          <article class="blog-card fade-up stagger-3">
+            <a href="/blog/filmove-lokace-praha/" class="blog-card__image" aria-label="Přejít na článek: Kde se točily světové filmy v Praze">
+              <img
+                src="/images/optimized/location-movie-800.webp"
+                srcset="/images/optimized/location-movie-400.webp 400w, /images/optimized/location-movie-800.webp 800w"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                alt="Historická pražská lokace použitá ve světových filmech"
+                width="800" height="450"
+                loading="lazy">
+            </a>
+            <div class="blog-card__body">
+              <span class="blog-card__tag">Kultura</span>
+              <h2 class="blog-card__title">
+                <a href="/blog/filmove-lokace-praha/">Kde se točily světové filmy v Praze: Průvodce filmovými lokacemi</a>
+              </h2>
+              <p class="blog-card__excerpt">Amadeus, Mission Impossible, Kafka a desítky dalších světových filmů se natáčely v Praze. Průvodce nejznámějšími filmovými lokacemi hlavního města.</p>
+              <div class="blog-card__footer">
+                <time class="blog-card__date" datetime="2025-03-05">5. března 2025</time>
+                <a href="/blog/filmove-lokace-praha/" class="blog-card__read-more">Číst dál →</a>
+              </div>
+              <p style="font-size:12px;color:var(--color-muted);margin-top:8px;">7 min čtení</p>
+            </div>
+          </article>
+
+        </div><!-- /.blog-index-grid -->
+
+        <div class="blog-pagination-wrap">
+          <span class="blog-pagination">Stránka 1 / 1</span>
+        </div>
+
+      </div><!-- /.container -->
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════ FOOTER ══════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a href="/" class="footer__logo">Treasure Hunt <span>Prague</span></a>
+          <p class="footer__tagline">Nejlepší teambuilding v Praze. Skupiny od 9 do 300 lidí. Zážitek, na který se nezapomíná.</p>
+        </div>
+        <div>
+          <p class="footer__nav-title">Navigace</p>
+          <ul class="footer__nav-list">
+            <li><a href="/" class="footer__nav-link">Domů</a></li>
+            <li><a href="/#proc-treasure-hunt" class="footer__nav-link">Proč Treasure Hunt</a></li>
+            <li><a href="/#jak-to-funguje" class="footer__nav-link">Jak to funguje</a></li>
+            <li><a href="/#lokace" class="footer__nav-link">Lokace</a></li>
+            <li><a href="/blog/" class="footer__nav-link">Blog</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__nav-title">Kontakt</p>
+          <ul class="footer__nav-list">
+            <li><a href="/#kontakt" class="footer__nav-link">Rezervovat teambuilding</a></li>
+            <li><a href="mailto:info@treasurehuntprague.cz" class="footer__nav-link">info@treasurehuntprague.cz</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copyright">&copy; <span id="footer-year">2025</span> Treasure Hunt Prague. Všechna práva vyhrazena.</p>
+        <nav class="footer__legal" aria-label="Právní dokumenty">
+          <a href="/ochrana-udaju/" class="footer__legal-link">Ochrana osobních údajů</a>
+          <a href="/obchodni-podminky/" class="footer__legal-link">Obchodní podmínky</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js" defer></script>
+  <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
