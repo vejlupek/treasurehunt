@@ -11,13 +11,18 @@
   <link rel="alternate" hreflang="de" href="https://treasurehuntprague.cz/de/">
   <link rel="alternate" hreflang="es" href="https://treasurehuntprague.cz/es/">
   <link rel="alternate" hreflang="x-default" href="https://treasurehuntprague.cz/">
-  <!-- Preconnect for Google Fonts -->
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
   <!-- Preload hero image -->
-  <link rel="preload" as="image" href="/treasurehunt/images/optimized/hero-prague-1200.webp" imagesrcset="/treasurehunt/treasurehunt/images/optimized/hero-prague-800.webp 800w, /treasurehunt/images/optimized/hero-prague-1200.webp 1200w, /treasurehunt/images/optimized/hero-prague-1920.webp 1920w" imagesizes="100vw">
+  <link rel="preload" as="image" href="/treasurehunt/images/optimized/hero-prague-800.webp" media="(max-width: 767px)">
+  <link rel="preload" as="image" href="/treasurehunt/images/optimized/hero-prague-1200.webp" media="(min-width: 768px)">
+
   <link rel="stylesheet" href="/treasurehunt/css/style.css">
+
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
   {
@@ -98,20 +103,29 @@
 </head>
 <body>
 
-<header class="nav" role="banner">
-  <div class="nav__inner">
-    <a href="/treasurehunt/" class="nav__logo" aria-label="Treasure Hunt Prague - domů">
+  <!-- ========================================================================
+       NAVIGATION
+       ======================================================================== -->
+  <header class="nav" role="banner">
+    <div class="nav__inner">
+
+      <!-- Logo -->
+      <a href="/treasurehunt/" class="nav__logo" aria-label="Treasure Hunt Prague — domů">
         Treasure Hunt <span>Prague</span>
       </a>
-    <nav class="nav__links" aria-label="Hlavní navigace">
-      <a href="#why" class="nav__link" data-i18n="nav.why">Proč to funguje</a>
-      <a href="#locations" class="nav__link" data-i18n="nav.locations">Lokace</a>
-      <a href="#how" class="nav__link" data-i18n="nav.how">Jak to funguje</a>
-      <a href="#reviews" class="nav__link" data-i18n="nav.reviews">Recenze</a>
-      <a href="#faq" class="nav__link" data-i18n="nav.faq">FAQ</a>
-    </nav>
-    <div class="nav__right">
-      <div class="nav__lang-dropdown">
+
+      <!-- Desktop links -->
+      <nav class="nav__links" aria-label="Hlavní navigace">
+        <a href="#why"       class="nav__link">Proč to funguje</a>
+        <a href="#locations" class="nav__link">Trasy</a>
+        <a href="#how"       class="nav__link">Jak to probíhá</a>
+        <a href="#reviews"   class="nav__link">Reference</a>
+        <a href="#faq"       class="nav__link">FAQ</a>
+      </nav>
+
+      <!-- Desktop right: lang switcher + CTA -->
+      <div class="nav__right">
+        <div class="nav__lang-dropdown">
           <button class="nav__lang-current" aria-expanded="false">CS <span aria-hidden="true">▾</span></button>
           <div class="nav__lang-list">
             <a href="/treasurehunt/en/" class="nav__lang-option" hreflang="en">EN</a>
@@ -119,857 +133,1394 @@
             <a href="/treasurehunt/es/" class="nav__lang-option" hreflang="es">ES</a>
           </div>
         </div>
-      <a href="#contact" class="btn btn-primary nav__cta" data-i18n="nav.cta">Nezávazná poptávka</a>
+        <a href="#contact" class="btn btn-primary nav__cta">Nezávazná poptávka</a>
+      </div>
+
+      <!-- Hamburger (mobile) -->
+      <button class="nav__hamburger" aria-label="Otevřít menu" aria-expanded="false" aria-controls="nav-mobile">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
-    <button class="nav__hamburger" aria-label="Otevřít menu" aria-expanded="false" aria-controls="nav-mobile">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </div>
-</header>
+  </header>
 
-<!-- Mobile overlay menu -->
-<div class="nav-mobile" id="nav-mobile" aria-hidden="true" role="dialog" aria-label="Mobilní menu">
-  <button class="nav-mobile__close" aria-label="Zavřít menu">×</button>
-  <nav class="nav-mobile__links">
-    <a href="#why" data-i18n="nav.why">Proč to funguje</a>
-    <a href="#locations" data-i18n="nav.locations">Lokace</a>
-    <a href="#how" data-i18n="nav.how">Jak to funguje</a>
-    <a href="#reviews" data-i18n="nav.reviews">Recenze</a>
-    <a href="#faq" data-i18n="nav.faq">FAQ</a>
-    <a href="#contact" data-i18n="nav.contact">Kontakt</a>
-  </nav>
-  <div class="nav-mobile__lang">
-    <a href="/treasurehunt/" class="nav-mobile__lang-btn is-active" hreflang="cs">CS</a>
-    <a href="/treasurehunt/en/" class="nav-mobile__lang-btn" hreflang="en">EN</a>
-    <a href="/treasurehunt/de/" class="nav-mobile__lang-btn" hreflang="de">DE</a>
-    <a href="/treasurehunt/es/" class="nav-mobile__lang-btn" hreflang="es">ES</a>
-  </div>
-  <a href="#contact" class="btn btn-primary nav-mobile__cta" data-i18n="nav.cta">Nezávazná poptávka</a>
-</div>
+  <!-- Mobile menu overlay -->
+  <div class="nav-mobile" id="nav-mobile" aria-hidden="true" role="dialog" aria-label="Mobilní menu">
+    <button class="nav-mobile__close" aria-label="Zavřít menu">&times;</button>
 
-<main>
+    <nav class="nav-mobile__links" aria-label="Mobilní navigace">
+      <a href="#why"       class="nav-mobile__link">Proč to funguje</a>
+      <a href="#locations" class="nav-mobile__link">Trasy</a>
+      <a href="#how"       class="nav-mobile__link">Jak to probíhá</a>
+      <a href="#reviews"   class="nav-mobile__link">Reference</a>
+      <a href="#faq"       class="nav-mobile__link">FAQ</a>
+      <a href="#contact"   class="nav-mobile__link">Kontakt</a>
+    </nav>
 
-  <!-- Hero Section -->
-  <section class="hero" id="home">
-    <div class="hero__bg">
-      <img
-        src="/treasurehunt/images/optimized/hero-prague-1200.webp"
-        srcset="/treasurehunt/images/optimized/hero-prague-800.webp 800w, /treasurehunt/images/optimized/hero-prague-1200.webp 1200w, /treasurehunt/images/optimized/hero-prague-1920.webp 1920w"
-        sizes="100vw"
-        alt="Praha při soumraku — atmosferická kulisa pro teambuilding Treasure Hunt"
-        width="1920" height="1080"
-        fetchpriority="high"
-      >
+    <div class="nav-mobile__lang" role="list" aria-label="Výběr jazyka">
+      <a href="/treasurehunt/"    class="nav-mobile__lang-btn is-active" hreflang="cs" aria-current="true">CS</a>
+      <a href="/treasurehunt/en/" class="nav-mobile__lang-btn" hreflang="en">EN</a>
+      <a href="/treasurehunt/de/" class="nav-mobile__lang-btn" hreflang="de">DE</a>
+      <a href="/treasurehunt/es/" class="nav-mobile__lang-btn" hreflang="es">ES</a>
     </div>
-    <div class="hero__overlay"></div>
-    <div class="hero__fog"></div>
-    <!-- SVG Compass decoration -->
-    <svg class="hero__compass" viewBox="0 0 200 200" aria-hidden="true">
-      <circle cx="100" cy="100" r="90" stroke="#c9a84c" stroke-width="1" fill="none" stroke-dasharray="4 8" opacity="0.3"/>
-      <circle cx="100" cy="100" r="70" stroke="#c9a84c" stroke-width="0.5" fill="none" opacity="0.2"/>
-      <line x1="100" y1="10" x2="100" y2="190" stroke="#c9a84c" stroke-width="0.5" opacity="0.2"/>
-      <line x1="10" y1="100" x2="190" y2="100" stroke="#c9a84c" stroke-width="0.5" opacity="0.2"/>
-      <polygon points="100,20 94,100 100,180 106,100" fill="#c9a84c" opacity="0.6"/>
-      <text x="100" y="16" text-anchor="middle" fill="#c9a84c" font-size="10" font-family="Jost" opacity="0.7">N</text>
+
+    <a href="#contact" class="btn btn-primary nav-mobile__cta">Nezávazná poptávka</a>
+  </div>
+
+
+  <!-- ========================================================================
+       HERO
+       ======================================================================== -->
+  <section class="hero hero-animate" aria-label="Úvod">
+
+    <!-- Background image -->
+    <div class="hero__bg" aria-hidden="true">
+      <picture>
+        <source
+          srcset="/treasurehunt/images/optimized/hero-prague-800.webp 800w,
+                  /images/optimized/hero-prague-1200.webp 1200w,
+                  /images/optimized/hero-prague-1920.webp 1920w"
+          sizes="100vw"
+          type="image/webp">
+        <img
+          src="/treasurehunt/images/optimized/hero-prague-1200.webp"
+          alt="Praha při soumraku — atmosferická kulisa pro teambuilding Treasure Hunt"
+          width="1920" height="1080"
+          fetchpriority="high">
+      </picture>
+    </div>
+
+    <div class="hero__overlay" aria-hidden="true"></div>
+    <div class="hero__vignette" aria-hidden="true"></div>
+
+    <!-- Decorative compass -->
+    <svg class="hero__compass" aria-hidden="true" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="100" cy="100" r="95" stroke="#c9a84c" stroke-width="1" stroke-dasharray="4 6"/>
+      <circle cx="100" cy="100" r="75" stroke="#c9a84c" stroke-width="0.5" opacity="0.5"/>
+      <circle cx="100" cy="100" r="55" stroke="#c9a84c" stroke-width="0.5" opacity="0.3"/>
+      <line x1="100" y1="5"  x2="100" y2="195" stroke="#c9a84c" stroke-width="0.5" opacity="0.4"/>
+      <line x1="5"   y1="100" x2="195" y2="100" stroke="#c9a84c" stroke-width="0.5" opacity="0.4"/>
+      <polygon points="100,20 106,95 100,110 94,95"  fill="#c9a84c"/>
+      <polygon points="100,180 106,105 100,90 94,105" fill="#c9a84c" opacity="0.4"/>
+      <circle cx="100" cy="100" r="6" fill="#c9a84c"/>
+      <text x="100" y="16"  text-anchor="middle" fill="#c9a84c" font-size="10" font-family="serif">N</text>
+      <text x="100" y="192" text-anchor="middle" fill="#c9a84c" font-size="10" font-family="serif" opacity="0.6">S</text>
+      <text x="188" y="104" text-anchor="middle" fill="#c9a84c" font-size="10" font-family="serif" opacity="0.6">V</text>
+      <text x="12"  y="104" text-anchor="middle" fill="#c9a84c" font-size="10" font-family="serif" opacity="0.6">Z</text>
     </svg>
-    <div class="container hero__content hero-animate">
-      <p class="hero__badge" data-i18n="hero.badge">Zážitkový teambuilding v Praze</p>
-      <h1 class="hero__headline" data-i18n="hero.headline">Teambuilding,<br>který si všichni užijí.</h1>
-      <p class="hero__sub" data-i18n="hero.subheadline">Vybrat aktivitu pro různorodý tým je těžké. Treasure Hunt v Praze funguje pro každého — bez ohledu na věk, kondici nebo vztah k teambuildingu.</p>
-      <a href="#contact" class="btn btn--primary btn--hero" data-i18n="hero.cta">Nezávazná poptávka</a>
+
+    <!-- Content -->
+    <div class="hero__content">
+      <p class="hero__badge">Firemní teambuilding č. 1 v Praze</p>
+
+      <h1 class="hero__headline">
+        Teambuilding,<br>který si všichni užijí.
+      </h1>
+
+      <p class="hero__sub">
+        Vybrat aktivitu pro různorodý tým je těžké. Treasure Hunt v Praze funguje pro každého — bez ohledu na věk, kondici nebo vztah k teambuildingu.
+      </p>
+
+      <div class="hero__actions">
+        <a href="#contact" class="btn btn-primary">Nezávazná poptávka</a>
+        <a href="#why"     class="btn btn-ghost">Zjistit více</a>
+      </div>
     </div>
-    <div class="hero__scroll-hint" aria-hidden="true">
-      <span></span>
-    </div>
+
+    <!-- Scroll indicator -->
+    <div class="hero__scroll" aria-hidden="true">Scroll</div>
   </section>
 
-  <!-- Problem Statement Section -->
-  <section class="problem-section" aria-labelledby="problem-heading">
-    <div class="container">
-      <div class="problem-section__inner" data-animate>
-        <p class="problem-section__statement" id="problem-heading" data-i18n="problem.text">
-          <span class="highlight">Potřebujete něco, co bude fungovat pro 8 nebo 80 lidí. Pro soutěživé i introvertní. Pro ty, kteří nesnáší icebreakery, i pro ty, kteří je milují. Pro lidi, kteří „už viděli všechno."</span>
-        </p>
-        <p class="problem-section__solution" data-i18n="problem.solution">
-          Proto jsme to vytvořili.
-        </p>
-      </div>
+
+  <!-- ========================================================================
+       PROBLEM STATEMENT
+       ======================================================================== -->
+  <section class="problem-section" aria-label="Výzva">
+    <div class="problem-section__inner">
+      <p class="problem-section__statement" data-animate>
+        <span class="highlight">Většina firemního teambuildingu se zapomene do pondělka ráno.</span>
+        Potřebujete něco, co bude fungovat pro 8 nebo 80 lidí. Pro soutěživé i introvertní. Pro ty, kteří nesnáší icebreakery, i pro ty, kteří je milují. Pro lidi, kteří „už viděli všechno."
+      </p>
+      <p class="problem-section__resolution text-label" data-animate>
+        Proto jsme to vytvořili.
+      </p>
     </div>
   </section>
 
   <div class="divider-line container" aria-hidden="true"></div>
 
-  <!-- Why It Works Section -->
-  <section class="why-section" id="why" aria-labelledby="why-heading">
+
+  <!-- ========================================================================
+       WHY IT WORKS
+       ======================================================================== -->
+  <section class="why-section" id="why" aria-labelledby="why-title">
     <div class="container">
-      <div class="section-header" data-animate>
+
+      <header class="why-section__header" data-animate>
         <p class="text-label text-gold">Koncept</p>
-        <h2 id="why-heading" data-i18n="why.title">Proč Treasure Hunt funguje pro každý tým</h2>
-      </div>
+        <h2 id="why-title">Šest důvodů, proč to funguje</h2>
+      </header>
+
       <div class="why-section__grid" data-animate-stagger>
-        <div class="why-card" data-animate>
-          <div class="why-card__icon" aria-hidden="true">
-            <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" stroke="#c9a84c" stroke-width="1.5"/><path d="M16 24l6 6 10-12" stroke="#c9a84c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <h3 data-i18n="why.1.title">Nikdo nezůstane pozadu</h3>
-          <p data-i18n="why.1.desc">Nenáročná procházka tempem skupiny. Vhodné pro všechny kondice a věkové kategorie.</p>
-        </div>
-        <div class="why-card" data-animate>
-          <div class="why-card__icon" aria-hidden="true">
-            <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" stroke="#c9a84c" stroke-width="1.5"/><path d="M24 14v10l7 4" stroke="#c9a84c" stroke-width="2" stroke-linecap="round"/></svg>
-          </div>
-          <h3 data-i18n="why.2.title">Každá osobnost má svou roli</h3>
-          <p data-i18n="why.2.desc">Analytici luští kódy. Kreativci vidí to, co ostatní přehlédnou. Přirození vůdci koordinují. I ti tiší se stanou hrdiny.</p>
-        </div>
-        <div class="why-card" data-animate>
-          <div class="why-card__icon" aria-hidden="true">
-            <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" stroke="#c9a84c" stroke-width="1.5"/><path d="M18 24c0-3.3 2.7-6 6-6s6 2.7 6 6-2.7 6-6 6" stroke="#c9a84c" stroke-width="2" stroke-linecap="round"/></svg>
-          </div>
-          <h3 data-i18n="why.3.title">Skutečná spolupráce, ne nucená zábava</h3>
-          <p data-i18n="why.3.desc">Týmy společně řeší skutečné hádanky. Žádné trapné icebreakery nejsou potřeba.</p>
-        </div>
-        <div class="why-card" data-animate>
-          <div class="why-card__icon" aria-hidden="true">
-            <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" stroke="#c9a84c" stroke-width="1.5"/><path d="M24 34c-5.5 0-10-4.5-10-10s4.5-10 10-10 10 4.5 10 10" stroke="#c9a84c" stroke-width="2" stroke-linecap="round"/><path d="M24 14V10M34 24h4" stroke="#c9a84c" stroke-width="2" stroke-linecap="round"/></svg>
-          </div>
-          <h3 data-i18n="why.4.title">Praha, jak jste ji nikdy neviděli</h3>
-          <p data-i18n="why.4.desc">Odkryjte skryté příběhy při procházce nejkrásnějšími a nejpřekvapivějšími zákoutími města.</p>
-        </div>
-        <div class="why-card" data-animate>
-          <div class="why-card__icon" aria-hidden="true">
-            <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" stroke="#c9a84c" stroke-width="1.5"/><path d="M16 28l4-8 4 4 4-8 4 4" stroke="#c9a84c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <h3 data-i18n="why.5.title">Od 9 do 300+ lidí</h3>
-          <p data-i18n="why.5.desc">Malý startup nebo velká korporace — formát se přizpůsobí velikosti vašeho týmu.</p>
-        </div>
-        <div class="why-card" data-animate>
-          <div class="why-card__icon" aria-hidden="true">
-            <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" stroke="#c9a84c" stroke-width="1.5"/><path d="M24 14c-5.5 0-10 4.5-10 10s4.5 10 10 10" stroke="#c9a84c" stroke-width="2" stroke-linecap="round"/><path d="M30 18l4-4M30 30l4 4" stroke="#c9a84c" stroke-width="2" stroke-linecap="round"/></svg>
-          </div>
-          <h3 data-i18n="why.6.title">Funguje za každého počasí</h3>
-          <p data-i18n="why.6.desc">Máme záložní plán pro deštivé počasí. Pražské počasí vaše plány nezkazí.</p>
-        </div>
+
+        <!-- Card 1 -->
+        <article class="why-card fade-up">
+          <div class="why-card__number" aria-hidden="true">01</div>
+          <h3 class="why-card__title">Skutečně to funguje</h3>
+          <p class="why-card__text">Žádné padání dozadu ani trapné ledy. Lov vytváří skutečné kamarádství díky sdíleným výzvám a zdravé soutěžní atmosféře.</p>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="why-card fade-up">
+          <div class="why-card__number" aria-hidden="true">02</div>
+          <h3 class="why-card__title">Zcela venku</h3>
+          <p class="why-card__text">Čerstvý vzduch, pražské ulice, žádné zasedací místnosti. Pohybová aktivita a úžasné scenérie dělají z akce nezapomenutelný zážitek.</p>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="why-card fade-up">
+          <div class="why-card__number" aria-hidden="true">03</div>
+          <h3 class="why-card__title">Plně zajištěno</h3>
+          <p class="why-card__text">Váš Game Master se v průběhu dne postará o vše — logistiku, tempo, energii. Vy jen přijdete a užíváte si.</p>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="why-card fade-up">
+          <div class="why-card__number" aria-hidden="true">04</div>
+          <h3 class="why-card__title">Škálovatelné pro jakoukoli skupinu</h3>
+          <p class="why-card__text">Od 9 do 300 osob. Velké skupiny se automaticky rozdělí do soutěžních týmů, takže všichni zůstanou zapojeni.</p>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="why-card fade-up">
+          <div class="why-card__number" aria-hidden="true">05</div>
+          <h3 class="why-card__title">Za každého počasí</h3>
+          <p class="why-card__text">Trasy se provádějí za jakéhokoli počasí. Lehký déšť přidává dobrodružství. Při extrémním počasí přesuneme akci zdarma.</p>
+        </article>
+
+        <!-- Card 6 -->
+        <article class="why-card fade-up">
+          <div class="why-card__number" aria-hidden="true">06</div>
+          <h3 class="why-card__title">Trvalá vzpomínka</h3>
+          <p class="why-card__text">Profesionální fotodokumentace, certifikáty a příběh, který si odnesete do kanceláře — výsledky přesahující samotný den.</p>
+        </article>
+
       </div>
     </div>
   </section>
 
-  <!-- Locations Section -->
-  <section class="locations-section" id="locations" aria-labelledby="locations-heading">
+
+  <!-- ========================================================================
+       LOCATIONS
+       ======================================================================== -->
+  <section class="locations-section" id="locations" aria-labelledby="locations-title">
     <div class="container">
-      <div class="section-header" data-animate>
+
+      <header class="locations-section__header" data-animate>
         <p class="text-label text-gold">Trasy</p>
-        <h2 id="locations-heading" data-i18n="locations.title">Vyberte svou lokaci</h2>
-        <p data-i18n="locations.subtitle">Pět jedinečných tras historickou Prahou</p>
-      </div>
+        <h2 id="locations-title">Pět tras Prahou</h2>
+        <p class="text-muted" style="margin-top:12px;max-width:600px;margin-left:auto;margin-right:auto;">
+          Každá trasa vypráví jiný příběh. Vyberte tu, která nejlépe odpovídá osobnosti vaší firmy.
+        </p>
+      </header>
+
     </div>
-    <div class="locations-carousel" role="list" aria-label="Dostupné lokace">
-      <div class="location-card" role="listitem" data-animate>
-        <div class="location-card__img-wrap">
-          <img src="/treasurehunt/images/optimized/location-old-town-400.webp" srcset="/treasurehunt/images/optimized/location-old-town-400.webp 400w, /treasurehunt/images/optimized/location-old-town-800.webp 800w" sizes="(max-width:768px) 320px, 400px" alt="Staré Město Praha — gotická architektura, orloj, středověká zákoutí" width="400" height="533" loading="lazy">
-        </div>
+
+    <!-- Scrollable track -->
+    <div class="locations-track" role="list" aria-label="Dostupné trasy">
+
+      <!-- Staré Město -->
+      <article class="location-card" role="listitem">
+        <picture>
+          <source
+            srcset="/treasurehunt/images/optimized/location-old-town-400.webp 400w,
+                    /images/optimized/location-old-town-800.webp 800w"
+            sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 280px"
+            type="image/webp">
+          <img
+            class="location-card__img"
+            src="/treasurehunt/images/optimized/location-old-town-800.webp"
+            alt="Gotická architektura Starého Města Praha s Astronomickým orlojem"
+            width="800" height="1067" loading="lazy">
+        </picture>
+        <div class="location-card__overlay" aria-hidden="true"></div>
         <div class="location-card__body">
-          <div class="location-card__difficulty difficulty--medium" data-i18n="locations.difficulty.medium">Střední obtížnost</div>
-          <h3 data-i18n="locations.oldtown.name">Staré Město</h3>
-          <p data-i18n="locations.oldtown.desc">Gotická architektura, astronomický orloj, středověká tajemství skrytá na očích. Nejfotogeničtější trasa v srdci Prahy.</p>
+          <span class="location-card__badge">★ Nejoblíbenější</span>
+          <h3 class="location-card__title">Staré Město</h3>
+          <p class="location-card__meta">Historie · Architektura · 2,5 km</p>
         </div>
-      </div>
-      <div class="location-card" role="listitem" data-animate>
-        <div class="location-card__img-wrap">
-          <img src="/treasurehunt/images/optimized/location-hradcany-400.webp" srcset="/treasurehunt/images/optimized/location-hradcany-400.webp 400w, /treasurehunt/images/optimized/location-hradcany-800.webp 800w" sizes="(max-width:768px) 320px, 400px" alt="Hradčany Praha — hradní čtvrť, královská historie, panoramatické výhledy" width="400" height="533" loading="lazy">
-        </div>
+      </article>
+
+      <!-- Hradčany -->
+      <article class="location-card" role="listitem">
+        <picture>
+          <source
+            srcset="/treasurehunt/images/optimized/location-hradcany-400.webp 400w,
+                    /images/optimized/location-hradcany-800.webp 800w"
+            sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 280px"
+            type="image/webp">
+          <img
+            class="location-card__img"
+            src="/treasurehunt/images/optimized/location-hradcany-800.webp"
+            alt="Panoramatický výhled přes Prahu z Hradčan — Pražský hrad a panorama města"
+            width="800" height="1067" loading="lazy">
+        </picture>
+        <div class="location-card__overlay" aria-hidden="true"></div>
         <div class="location-card__body">
-          <div class="location-card__difficulty difficulty--hard" data-i18n="locations.difficulty.hard">Náročnější</div>
-          <h3 data-i18n="locations.hradcany.name">Hradčany</h3>
-          <p data-i18n="locations.hradcany.desc">Hradní čtvrť, královská historie a panoramatické výhledy nad celým městem. Trasa plná legend a státních tajemství.</p>
+          <span class="location-card__badge">Panoramatické výhledy</span>
+          <h3 class="location-card__title">Hradčany</h3>
+          <p class="location-card__meta">Hrad · Katedrála · 3 km</p>
         </div>
-      </div>
-      <div class="location-card" role="listitem" data-animate>
-        <div class="location-card__img-wrap">
-          <img src="/treasurehunt/images/optimized/location-vysehrad-400.webp" srcset="/treasurehunt/images/optimized/location-vysehrad-400.webp 400w, /treasurehunt/images/optimized/location-vysehrad-800.webp 800w" sizes="(max-width:768px) 320px, 400px" alt="Vyšehrad Praha — starověká pevnost, pověsti, nábřežní atmosféra" width="400" height="533" loading="lazy">
-        </div>
+      </article>
+
+      <!-- Vyšehrad -->
+      <article class="location-card" role="listitem">
+        <picture>
+          <source
+            srcset="/treasurehunt/images/optimized/location-vysehrad-400.webp 400w,
+                    /images/optimized/location-vysehrad-800.webp 800w"
+            sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 280px"
+            type="image/webp">
+          <img
+            class="location-card__img"
+            src="/treasurehunt/images/optimized/location-vysehrad-800.webp"
+            alt="Vyšehrad s výhledem na Vltavu — historická pražská památka"
+            width="800" height="1067" loading="lazy">
+        </picture>
+        <div class="location-card__overlay" aria-hidden="true"></div>
         <div class="location-card__body">
-          <div class="location-card__difficulty difficulty--easy" data-i18n="locations.difficulty.easy">Lehká obtížnost</div>
-          <h3 data-i18n="locations.vysehrad.name">Vyšehrad</h3>
-          <p data-i18n="locations.vysehrad.desc">Starověká pevnost, pověsti a legendy, říční atmosféra. Trasa mimo turistické trasy s úžasným výhledem na Vltavu.</p>
+          <span class="location-card__badge">Skrytý poklad</span>
+          <h3 class="location-card__title">Vyšehrad</h3>
+          <p class="location-card__meta">Legenda · Park · 2 km</p>
         </div>
-      </div>
-      <div class="location-card" role="listitem" data-animate>
-        <div class="location-card__img-wrap">
-          <img src="/treasurehunt/images/optimized/location-karlin-400.webp" srcset="/treasurehunt/images/optimized/location-karlin-400.webp 400w, /treasurehunt/images/optimized/location-karlin-800.webp 800w" sizes="(max-width:768px) 320px, 400px" alt="Karlín Praha — nejhipsterštější čtvrť, street art, moderní urbánní příběhy" width="400" height="533" loading="lazy">
-        </div>
+      </article>
+
+      <!-- Karlín -->
+      <article class="location-card" role="listitem">
+        <picture>
+          <source
+            srcset="/treasurehunt/images/optimized/location-karlin-400.webp 400w,
+                    /images/optimized/location-karlin-800.webp 800w"
+            sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 280px"
+            type="image/webp">
+          <img
+            class="location-card__img"
+            src="/treasurehunt/images/optimized/location-karlin-800.webp"
+            alt="Karlín v Praze — živé street art a moderní architektura"
+            width="800" height="1067" loading="lazy">
+        </picture>
+        <div class="location-card__overlay" aria-hidden="true"></div>
         <div class="location-card__body">
-          <div class="location-card__difficulty difficulty--medium" data-i18n="locations.difficulty.medium">Střední obtížnost</div>
-          <h3 data-i18n="locations.karlin.name">Karlín</h3>
-          <p data-i18n="locations.karlin.desc">Nejzajímavější čtvrť Prahy, street art, moderní urbánní příběhy. Ideální pro týmy, které chtějí vidět jinou tvář Prahy.</p>
+          <span class="location-card__badge">Urbánní a moderní</span>
+          <h3 class="location-card__title">Karlín</h3>
+          <p class="location-card__meta">Street art · Kavárny · 2,2 km</p>
         </div>
-      </div>
-      <div class="location-card" role="listitem" data-animate>
-        <div class="location-card__img-wrap">
-          <img src="/treasurehunt/images/optimized/location-movie-400.webp" srcset="/treasurehunt/images/optimized/location-movie-400.webp 400w, /treasurehunt/images/optimized/location-movie-800.webp 800w" sizes="(max-width:768px) 320px, 400px" alt="Filmové lokace Praha — kde se natáčely světové filmy jako Amadeus a Mission Impossible" width="400" height="533" loading="lazy">
-        </div>
+      </article>
+
+      <!-- Filmové lokace -->
+      <article class="location-card" role="listitem">
+        <picture>
+          <source
+            srcset="/treasurehunt/images/optimized/location-movie-400.webp 400w,
+                    /images/optimized/location-movie-800.webp 800w"
+            sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 280px"
+            type="image/webp">
+          <img
+            class="location-card__img"
+            src="/treasurehunt/images/optimized/location-movie-800.webp"
+            alt="Pražské filmové lokace — historické kulisy z Amadea a Mission Impossible"
+            width="800" height="1067" loading="lazy">
+        </picture>
+        <div class="location-card__overlay" aria-hidden="true"></div>
         <div class="location-card__body">
-          <div class="location-card__difficulty difficulty--medium" data-i18n="locations.difficulty.medium">Střední obtížnost</div>
-          <h3 data-i18n="locations.movie.name">Filmové lokace Prahy</h3>
-          <p data-i18n="locations.movie.desc">Objavte místa, kde se natáčely Amadeus, Mission Impossible a další světové filmy. Trasa plná překvapení pro filmové fanoušky i laiky.</p>
+          <span class="location-card__badge">Oblíbené filmových fanoušků</span>
+          <h3 class="location-card__title">Pražské filmové lokace</h3>
+          <p class="location-card__meta">Kino · Špioni · 2,8 km</p>
         </div>
-      </div>
-    </div>
-    <div class="carousel-dots" aria-label="Navigace karuselu" role="tablist">
-      <button class="carousel-dot active" aria-label="Staré Město" role="tab"></button>
-      <button class="carousel-dot" aria-label="Hradčany" role="tab"></button>
-      <button class="carousel-dot" aria-label="Vyšehrad" role="tab"></button>
-      <button class="carousel-dot" aria-label="Karlín" role="tab"></button>
-      <button class="carousel-dot" aria-label="Filmové lokace" role="tab"></button>
+      </article>
+
     </div>
   </section>
 
   <div class="divider-diagonal" aria-hidden="true"></div>
 
-  <!-- How It Works Section -->
-  <section class="how-section" id="how" aria-labelledby="how-heading">
+
+  <!-- ========================================================================
+       HOW IT WORKS
+       ======================================================================== -->
+  <section class="how-section" id="how" aria-labelledby="how-title">
     <div class="container">
-      <div class="section-header" data-animate>
+
+      <header class="how-section__header" data-animate>
         <p class="text-label text-gold">Průběh</p>
-        <h2 id="how-heading" data-i18n="how.title">Jak to funguje</h2>
-      </div>
-      <div class="how-section__steps">
+        <h2 id="how-title">Jak to probíhá</h2>
+      </header>
+
+      <div class="how-steps">
+
+        <!-- Step 1 -->
         <div class="how-step" data-animate>
-          <div class="how-step__number" aria-hidden="true">1</div>
-          <div class="how-step__connector" aria-hidden="true"></div>
-          <div class="how-step__content">
-            <h3 data-i18n="how.step1.title">Vyberte lokaci</h3>
-            <p data-i18n="how.step1.desc">Vyberte si z 5 pražských tras: Staré Město, Hradčany, Vyšehrad, Karlín nebo Filmové lokace. Poradíme vám s výběrem.</p>
+          <div class="how-step__left" aria-hidden="true">
+            <div class="how-step__circle">
+              1
+              <span class="pulse"></span>
+            </div>
+            <div class="how-step__connector"></div>
+          </div>
+          <div class="how-step__body">
+            <h3 class="how-step__title">Poptávka a přizpůsobení</h3>
+            <p class="how-step__text">Řekněte nám o velikosti vaší skupiny, preferovaném datu a jakémkoli přizpůsobení. Odpovíme do 24 hodin s personalizovanou nabídkou.</p>
           </div>
         </div>
+
+        <!-- Step 2 -->
         <div class="how-step" data-animate>
-          <div class="how-step__number" aria-hidden="true">2</div>
-          <div class="how-step__connector" aria-hidden="true"></div>
-          <div class="how-step__content">
-            <h3 data-i18n="how.step2.title">Den honu</h3>
-            <p data-i18n="how.step2.desc">Váš Game Master vede týmy městem — luštíte stopy, plníte fotovýzvy a objevujete skrytá zákoutí Prahy.</p>
+          <div class="how-step__left" aria-hidden="true">
+            <div class="how-step__circle">
+              2
+              <span class="pulse"></span>
+            </div>
+            <div class="how-step__connector"></div>
+          </div>
+          <div class="how-step__body">
+            <h3 class="how-step__title">Potvrzení a příprava</h3>
+            <p class="how-step__text">Po potvrzení připravíme veškeré materiály, zkoordinujeme Game Mastera a zašleme vám podrobný briefing.</p>
           </div>
         </div>
+
+        <!-- Step 3 -->
         <div class="how-step" data-animate>
-          <div class="how-step__number" aria-hidden="true">3</div>
-          <div class="how-step__content">
-            <h3 data-i18n="how.step3.title">Oslavte výhru</h3>
-            <p data-i18n="how.step3.desc">Sečteme body, slavnostně vyhlásíme vítěze a vy budete mít historky na pondělní poradu.</p>
+          <div class="how-step__left" aria-hidden="true">
+            <div class="how-step__circle">
+              3
+              <span class="pulse"></span>
+            </div>
+            <div class="how-step__connector"></div>
+          </div>
+          <div class="how-step__body">
+            <h3 class="how-step__title">Úvodní briefing</h3>
+            <p class="how-step__text">Týmy se shromáždí na startovním místě. Game Master představí pravidla, rozdá nápovědy a začne soutěž.</p>
           </div>
         </div>
+
+        <!-- Step 4 -->
+        <div class="how-step" data-animate>
+          <div class="how-step__left" aria-hidden="true">
+            <div class="how-step__circle">
+              4
+              <span class="pulse"></span>
+            </div>
+            <div class="how-step__connector"></div>
+          </div>
+          <div class="how-step__body">
+            <h3 class="how-step__title">Lov</h3>
+            <p class="how-step__text">Týmy závodí Prahou, řeší hádanky, odkrývají skryté příběhy a fotografují kontrolní body. Skutečná soutěž, skutečná zábava.</p>
+          </div>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="how-step" data-animate>
+          <div class="how-step__left" aria-hidden="true">
+            <div class="how-step__circle">
+              5
+              <span class="pulse"></span>
+            </div>
+            <div class="how-step__connector"></div>
+          </div>
+          <div class="how-step__body">
+            <h3 class="how-step__title">Předávání cen</h3>
+            <p class="how-step__text">Týmy se vrátí, sečtou se body, vítězové jsou korunováni. Volitelná skupinová fotografie, certifikáty a potlesk jsou součástí.</p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
   <div class="divider-diagonal divider-diagonal--flip" aria-hidden="true"></div>
 
-  <!-- Gallery Section -->
-  <section class="gallery-section" id="gallery" aria-labelledby="gallery-heading">
-    <div class="container gallery-section__header" data-animate>
+
+  <!-- ========================================================================
+       GALLERY
+       ======================================================================== -->
+  <section class="gallery-section" id="gallery" aria-labelledby="gallery-title">
+
+    <div class="container" style="padding-bottom:40px;" data-animate>
       <p class="text-label text-gold text-center">V akci</p>
-      <h2 id="gallery-heading" data-i18n="gallery.title">Atmosféra, kterou slova nevystihnou</h2>
-      <p class="gallery-section__caption text-muted" data-i18n="gallery.caption">Skutečné týmy. Skutečné reakce. Skutečné momenty, které se nestávají na konferenčních sálech.</p>
+      <h2 id="gallery-title" class="text-center" style="margin-top:8px;">Zážitek v obrazech</h2>
+      <p class="text-muted text-center" style="margin-top:16px;max-width:560px;margin-left:auto;margin-right:auto;">
+        Skutečné týmy. Skutečné reakce. Skutečné momenty, které se nestávají na konferenčních sálech.
+      </p>
     </div>
-    <div class="gallery-grid">
-      <div class="gallery-item gallery-item--wide" data-animate>
-        <img src="/treasurehunt/images/optimized/gallery-1-400.webp" srcset="/treasurehunt/images/optimized/gallery-1-400.webp 400w, /treasurehunt/images/optimized/gallery-1-800.webp 800w" sizes="(max-width:768px) 100vw, 60vw" alt="Tým řeší stopy na ulicích Prahy při Treasure Hunt teambuildingu" width="800" height="600" loading="lazy">
+
+    <div class="gallery-grid" aria-label="Galerie — týmy při Treasure Hunt teambuildingu v Praze">
+
+      <div class="gallery-item gallery-item--wide">
+        <picture>
+          <source srcset="/treasurehunt/images/optimized/team-action-2-400.webp 400w, /treasurehunt/images/optimized/team-action-2-800.webp 800w" type="image/webp">
+          <img src="/treasurehunt/images/optimized/team-action-2-800.webp" alt="Firemní tým společně řeší hádanky ve Starém Městě Praha" width="800" height="500" loading="lazy">
+        </picture>
+        <div class="gallery-item__caption">Týmy v akci — Staré Město</div>
       </div>
-      <div class="gallery-item" data-animate>
-        <img src="/treasurehunt/images/optimized/gallery-2-400.webp" srcset="/treasurehunt/images/optimized/gallery-2-400.webp 400w, /treasurehunt/images/optimized/gallery-2-800.webp 800w" sizes="(max-width:768px) 100vw, 40vw" alt="Nadšená oslava týmu při vyhlašování výsledků Treasure Hunt" width="400" height="600" loading="lazy">
+
+      <div class="gallery-item gallery-item--tall">
+        <picture>
+          <source srcset="/treasurehunt/images/optimized/team-group-1-400.webp 400w, /treasurehunt/images/optimized/team-group-1-800.webp 800w" type="image/webp">
+          <img src="/treasurehunt/images/optimized/team-group-1-800.webp" alt="Šťastný firemní tým při teambuildingu v Praze" width="800" height="500" loading="lazy">
+        </picture>
+        <div class="gallery-item__caption">Společně úspěšní</div>
       </div>
-      <div class="gallery-item" data-animate>
-        <img src="/treasurehunt/images/optimized/gallery-3-400.webp" srcset="/treasurehunt/images/optimized/gallery-3-400.webp 400w, /treasurehunt/images/optimized/gallery-3-800.webp 800w" sizes="(max-width:768px) 100vw, 35vw" alt="Game Master vysvětluje pravidla skupině účastníků teambuildingu" width="400" height="600" loading="lazy">
+
+      <div class="gallery-item">
+        <picture>
+          <source srcset="/treasurehunt/images/optimized/puzzle-solving-400.webp 400w, /treasurehunt/images/optimized/puzzle-solving-800.webp 800w" type="image/webp">
+          <img src="/treasurehunt/images/optimized/puzzle-solving-800.webp" alt="Kolegové řeší hádanku na smartphonu — teambuilding Praha" width="800" height="500" loading="lazy">
+        </picture>
+        <div class="gallery-item__caption">Řešení hádanek v týmu</div>
       </div>
-      <div class="gallery-item gallery-item--tall" data-animate>
-        <img src="/treasurehunt/images/optimized/gallery-4-400.webp" srcset="/treasurehunt/images/optimized/gallery-4-400.webp 400w, /treasurehunt/images/optimized/gallery-4-800.webp 800w" sizes="(max-width:768px) 100vw, 35vw" alt="Detailní pohled na hádankové karty a mapy při Treasure Hunt" width="400" height="800" loading="lazy">
+
+      <div class="gallery-item">
+        <picture>
+          <source srcset="/treasurehunt/images/optimized/team-action-4-400.webp 400w, /treasurehunt/images/optimized/team-action-4-800.webp 800w" type="image/webp">
+          <img src="/treasurehunt/images/optimized/team-action-4-800.webp" alt="Tým při fotovýzvě v uličkách Prahy" width="800" height="500" loading="lazy">
+        </picture>
+        <div class="gallery-item__caption">Fotovýzva napříč městem</div>
       </div>
-      <div class="gallery-item gallery-item--wide" data-animate>
-        <img src="/treasurehunt/images/optimized/gallery-5-400.webp" srcset="/treasurehunt/images/optimized/gallery-5-400.webp 400w, /treasurehunt/images/optimized/gallery-5-800.webp 800w" sizes="(max-width:768px) 100vw, 65vw" alt="Skupina kolegů prochází historickými ulicemi Prahy" width="800" height="500" loading="lazy">
+
+      <div class="gallery-item gallery-item--wide">
+        <picture>
+          <source srcset="/treasurehunt/images/optimized/team-celebration-400.webp 400w, /treasurehunt/images/optimized/team-celebration-800.webp 800w" type="image/webp">
+          <img src="/treasurehunt/images/optimized/team-celebration-800.webp" alt="Firemní tým slaví vítězství při teambuildingu v Praze" width="800" height="500" loading="lazy">
+        </picture>
+        <div class="gallery-item__caption">Předávání cen — nezapomenutelné momenty</div>
       </div>
-      <div class="gallery-item" data-animate>
-        <img src="/treasurehunt/images/optimized/gallery-6-400.webp" srcset="/treasurehunt/images/optimized/gallery-6-400.webp 400w, /treasurehunt/images/optimized/gallery-6-800.webp 800w" sizes="(max-width:768px) 100vw, 40vw" alt="Týmová fotografie na pozadí pražských památek" width="400" height="500" loading="lazy">
+
+      <div class="gallery-item">
+        <picture>
+          <source srcset="/treasurehunt/images/optimized/game-master-action-400.webp 400w, /treasurehunt/images/optimized/game-master-action-800.webp 800w" type="image/webp">
+          <img src="/treasurehunt/images/optimized/game-master-action-800.webp" alt="Profesionální Game Master provází týmy Prahou" width="800" height="500" loading="lazy">
+        </picture>
+        <div class="gallery-item__caption">Profesionální Game Master</div>
       </div>
+
+      <div class="gallery-item">
+        <picture>
+          <source srcset="/treasurehunt/images/optimized/prague-streets-400.webp 400w, /treasurehunt/images/optimized/prague-streets-800.webp 800w" type="image/webp">
+          <img src="/treasurehunt/images/optimized/prague-streets-800.webp" alt="Historické ulice Prahy jako kulisa pro teambuilding" width="800" height="500" loading="lazy">
+        </picture>
+        <div class="gallery-item__caption">Praha jako živé hřiště</div>
+      </div>
+
+      <div class="gallery-item">
+        <picture>
+          <source srcset="/treasurehunt/images/optimized/clue-cards-400.webp 400w, /treasurehunt/images/optimized/clue-cards-800.webp 800w" type="image/webp">
+          <img src="/treasurehunt/images/optimized/clue-cards-800.webp" alt="Nápovědné karty a hádankové materiály pro Treasure Hunt v Praze" width="800" height="500" loading="lazy">
+        </picture>
+        <div class="gallery-item__caption">Promyšlené hádanky a nápovědy</div>
+      </div>
+
+      <div class="gallery-item gallery-item--wide">
+        <picture>
+          <source srcset="/treasurehunt/images/optimized/team-group-2-400.webp 400w, /treasurehunt/images/optimized/team-group-2-800.webp 800w" type="image/webp">
+          <img src="/treasurehunt/images/optimized/team-group-2-800.webp" alt="Velký firemní tým při skupinovém teambuildingu před pražskou radnicí" width="800" height="500" loading="lazy">
+        </picture>
+        <div class="gallery-item__caption">Teambuilding pro velké skupiny</div>
+      </div>
+
     </div>
   </section>
 
-  <!-- Package Section -->
-  <section class="package-section" id="package" aria-labelledby="package-heading">
+
+  <!-- ========================================================================
+       PACKAGE
+       ======================================================================== -->
+  <section class="package-section" id="package" aria-labelledby="package-title">
     <div class="container">
-      <div class="section-header" data-animate>
-        <p class="text-label text-gold">Balíček</p>
-        <h2 id="package-heading" data-i18n="package.title">Co je zahrnuto</h2>
-        <p data-i18n="package.subtitle">Jeden komplexní balíček. Žádné skryté poplatky.</p>
-      </div>
+
       <div class="package-card" data-animate>
-        <div class="package-card__header">
-          <h3>Guided Treasure Hunt Prague</h3>
-          <p class="package-card__tagline text-muted" data-i18n="package.tagline">Kompletní teambuilding v jednom balíčku</p>
-        </div>
-        <ul class="package-card__features" role="list">
-          <li data-i18n="package.feature1">Zkušený Game Master po celou dobu akce</li>
-          <li data-i18n="package.feature2">Výběr z 5 pražských lokací a tras</li>
-          <li data-i18n="package.feature3">Obtížnost přizpůsobená vaší skupině</li>
-          <li data-i18n="package.feature4">Hádankové karty, hlavolamy a fotovýzvy</li>
-          <li data-i18n="package.feature5">Živé skórování a pořadí týmů</li>
-          <li data-i18n="package.feature6">Vhodné pro 9 až 300 účastníků</li>
-          <li data-i18n="package.feature7">Dostupné v češtině, angličtině, němčině, španělštině, francouzštině, polštině a italštině</li>
-          <li data-i18n="package.feature8">Záložní plán pro deštivé počasí</li>
-          <li data-i18n="package.feature9">Volitelně: koordinace pozávodní večeře / drinků</li>
-          <li data-i18n="package.feature10">Volitelně: brandované materiály a tematické stopy pro vaši firmu</li>
+        <p class="text-label text-gold" style="margin-bottom:16px;">Balíček</p>
+        <h2 class="package-card__title" id="package-title">Co je součástí</h2>
+        <p class="package-card__desc">Jeden komplexní balíček. Žádné skryté poplatky. Žádná nepříjemná překvapení na faktuře.</p>
+
+        <ul class="package-card__features" aria-label="Zahrnuté služby">
+          <li class="package-feature">Zkušený Game Master po celou dobu akce</li>
+          <li class="package-feature">Výběr z 5 pražských lokací a tras</li>
+          <li class="package-feature">Tištěné nebo digitální hádankové materiály a nápovědy</li>
+          <li class="package-feature">Živé skórování a sledování týmů v reálném čase</li>
+          <li class="package-feature">Profesionální fotodokumentace akce</li>
+          <li class="package-feature">Digitální certifikáty pro všechny účastníky</li>
+          <li class="package-feature">Obtížnost přizpůsobená vaší skupině</li>
+          <li class="package-feature">Dostupné v češtině, angličtině, němčině, španělštině, francouzštině, polštině a italštině</li>
+          <li class="package-feature">Volitelné brandování firemními hodnotami nebo Corporate Design</li>
+          <li class="package-feature">Záložní plán pro extrémní počasí — bezplatné přesunutí termínu</li>
         </ul>
-        <div class="package-card__cta">
-          <a href="#contact" class="btn btn--primary" data-i18n="package.cta">Nezávazná poptávka pro váš tým</a>
-          <p class="package-card__note text-muted" data-i18n="package.note">Bez závazků. Odpovíme do 24 hodin.</p>
-        </div>
+
+        <a href="#contact" class="btn btn-primary" style="font-size:15px;height:60px;padding:0 40px;">
+          Nezávazná poptávka pro váš tým
+        </a>
       </div>
+
     </div>
   </section>
 
-  <!-- Reviews Section -->
-  <section class="reviews-section" id="reviews" aria-labelledby="reviews-heading">
+
+  <!-- ========================================================================
+       REVIEWS
+       ======================================================================== -->
+  <section class="reviews-section" id="reviews" aria-labelledby="reviews-title">
     <div class="container">
-      <div class="section-header" data-animate>
+
+      <header class="reviews-section__header" data-animate>
         <p class="text-label text-gold">Reference</p>
-        <h2 id="reviews-heading" data-i18n="reviews.title">Co říkají naši klienti</h2>
-        <div class="reviews-aggregate" data-animate>
-          <div class="reviews-aggregate__stars" aria-label="Hodnocení 4.9 z 5 hvězd">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#c9a84c"/></svg>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#c9a84c"/></svg>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#c9a84c"/></svg>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#c9a84c"/></svg>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#c9a84c"/></svg>
+        <h2 id="reviews-title">Co říkají týmy</h2>
+
+        <div class="reviews-aggregate" style="margin-top:32px;">
+          <div class="stars" aria-label="5 z 5 hvězd">
+            <svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           </div>
-          <p class="reviews-aggregate__text" data-i18n="reviews.aggregate">★★★★★ 4.9 — hodnocení na základě 127 recenzí na Google, Facebooku a Tripadvisoru</p>
+          <p class="reviews-aggregate__count">★★★★★ 4,9 — průměr ze 127 ověřených hodnocení</p>
         </div>
-      </div>
-      <!-- Review Cards — 8 reviews -->
-      <div class="reviews-carousel" role="list" aria-label="Recenze zákazníků">
-        <!-- Review 1 -->
-        <article class="review-card" role="listitem" itemscope itemtype="https://schema.org/Review">
-          <div class="review-card__stars" aria-label="5 hvězd z 5">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#c9a84c"/></svg>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#c9a84c"/></svg>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#c9a84c"/></svg>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#c9a84c"/></svg>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#c9a84c"/></svg>
+      </header>
+
+    </div>
+
+    <!-- Reviews carousel -->
+    <div class="reviews-track" role="list" aria-label="Hodnocení zákazníků">
+
+      <!-- Review 1 -->
+      <article class="review-card" role="listitem">
+        <div class="review-card__header">
+          <div>
+            <p class="review-card__name">Markéta H.</p>
+            <p class="review-card__platform">HR manažerka — Google</p>
           </div>
-          <blockquote>
-            <p itemprop="reviewBody">"Organizovali jsme teambuilding pro 45 lidí z různých oddělení — od IT po marketing. Treasure Hunt byl naprostý hit. Dokonce i kolega, který 'nesnáší' teambuildingové aktivity, se na konci nemohl vynadívat. Game Master byl výborný."</p>
-          </blockquote>
-          <div class="review-card__author">
-            <span class="review-card__name" itemprop="author">Markéta H.</span>
-            <span class="review-card__role">HR manažerka, tech startup Praha</span>
+        </div>
+        <div class="review-card__stars" aria-label="5 z 5 hvězd">
+          <div class="stars">
+            <svg class="star star--small" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="star star--small" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="star star--small" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="star star--small" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="star star--small" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           </div>
-          <div class="review-card__meta">
-            <span class="review-card__platform review-card__platform--google">
-              <svg viewBox="0 0 24 24" width="16" height="16" aria-label="Google recenze"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-              Google
-            </span>
-            <time itemprop="datePublished" datetime="2024-11-15">Listopad 2024</time>
+        </div>
+        <blockquote class="review-card__text">„Organizovali jsme teambuilding pro 45 lidí z různých oddělení. Treasure Hunt byl naprostý hit. Dokonce i kolega, který nesnáší teambuildingové aktivity, byl na konci nadšený. Game Master byl výborný."</blockquote>
+      </article>
+
+      <!-- Review 2 -->
+      <article class="review-card" role="listitem">
+        <div class="review-card__header">
+          <div>
+            <p class="review-card__name">Tomáš N.</p>
+            <p class="review-card__platform">CEO — TripAdvisor</p>
           </div>
-        </article>
-        <!-- Review 2 -->
-        <article class="review-card" role="listitem" itemscope itemtype="https://schema.org/Review">
-          <div class="review-card__stars" aria-label="5 hvězd z 5">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#c9a84c"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#c9a84c"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#c9a84c"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#c9a84c"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#c9a84c"/></svg>
+        </div>
+        <div class="review-card__stars" aria-label="5 z 5 hvězd">
+          <div class="stars">
+            <svg class="star star--small" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="star star--small" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="star star--small" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="star star--small" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="star star--small" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           </div>
-          <blockquote>
-            <p itemprop="reviewBody">"Perfect team building for our international team! We had 30 people from 8 countries, ages 25 to 58. Everyone found their role and everyone had fun. The Game Master handled the mix of personalities brilliantly. Highly recommended for diverse corporate groups."</p>
-          </blockquote>
-          <div class="review-card__author">
-            <span class="review-card__name" itemprop="author">James M.</span>
-            <span class="review-card__role">Operations Director, multinational company</span>
+        </div>
+        <blockquote class="review-card__text">„Nejlepší na tom je, že nemusíte nic připravovat. Přijdete a vše prostě funguje. Po akci mi kolegové napsali, že to byl nejlepší firemní event za roky."</blockquote>
+      </article>
+
+      <!-- Review 3 -->
+      <article class="review-card" role="listitem">
+        <div class="review-card__header">
+          <div>
+            <p class="review-card__name">Lucie S.</p>
+            <p class="review-card__platform">HR Business Partner — Facebook</p>
           </div>
-          <div class="review-card__meta">
-            <span class="review-card__platform review-card__platform--tripadvisor">
-              <svg viewBox="0 0 24 24" width="16" height="16" aria-label="TripAdvisor recenze"><circle cx="6.5" cy="12" r="5" fill="#00AF87"/><circle cx="17.5" cy="12" r="5" fill="#00AF87"/><circle cx="12" cy="8" r="3" fill="#00AF87"/></svg>
-              Tripadvisor
-            </span>
-            <time itemprop="datePublished" datetime="2024-10-08">Říjen 2024</time>
+        </div>
+        <div class="review-card__stars" aria-label="5 z 5 hvězd">
+          <div class="stars">
+            <svg class="star star--small" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="star star--small" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="star star--small" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="star star--small" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="star star--small" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           </div>
-        </article>
-        <!-- Review 3 -->
-        <article class="review-card" role="listitem" itemscope itemtype="https://schema.org/Review">
-          <div class="review-card__stars" aria-label="5 hvězd z 5">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#c9a84c"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#c9a84c"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#c9a84c"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#c9a84c"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#c9a84c"/></svg>
+        </div>
+        <blockquote class="review-card__text">„Pořádala jsem tento event pro 80 osob z 12 zemí. Všichni se bavili — mladí i starší, sportovní i nesportovní. Skutečně ohromující."</blockquote>
+      </article>
+
+      <!-- Review 4 -->
+      <article class="review-card" role="listitem">
+        <div class="review-card__header">
+          <div>
+            <p class="review-card__name">Pavel H.</p>
+            <p class="review-card__platform">Team Lead — Google</p>
           </div>
-          <blockquote>
-            <p itemprop="reviewBody">"Wir haben Treasure Hunt für 60 Mitarbeiter unserer deutschen Niederlassung gebucht. Perfekte Organisation, professioneller Game Master und eine unvergessliche Erfahrung in der historischen Prager Altstadt. Alle waren begeistert!"</p>
-          </blockquote>
-          <div class="review-card__author">
-            <span class="review-card__name" itemprop="author">Sabine W.</span>
-            <span class="review-card__role">Personalreferentin, Automobilzulieferer</span>
+        </div>
+        <div class="review-card__stars" aria-label="5 z 5 hvězd">
+          <div class="stars">
+            <svg class="star star--small" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="star star--small" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="star star--small" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="star star--small" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="star star--small" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           </div>
-          <div class="review-card__meta">
-            <span class="review-card__platform review-card__platform--google">
-              <svg viewBox="0 0 24 24" width="16" height="16" aria-label="Google recenze"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-              Google
-            </span>
-            <time itemprop="datePublished" datetime="2024-09-20">Září 2024</time>
+        </div>
+        <blockquote class="review-card__text">„Perfektní příprava, perfektní realizace. Game Master byl profesionální a přitom skutečně sympatický. Ani chvíle nudy. Určitě si znovu zarezervujeme."</blockquote>
+      </article>
+
+      <!-- Review 5 -->
+      <article class="review-card" role="listitem">
+        <div class="review-card__header">
+          <div>
+            <p class="review-card__name">Jana M.</p>
+            <p class="review-card__platform">Office Manager — TripAdvisor</p>
           </div>
-        </article>
-        <!-- Review 4 -->
-        <article class="review-card" role="listitem" itemscope itemtype="https://schema.org/Review">
-          <div class="review-card__stars" aria-label="5 hvězd z 5">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#c9a84c"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#c9a84c"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#c9a84c"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#c9a84c"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#c9a84c"/></svg>
+        </div>
+        <div class="review-card__stars" aria-label="5 z 5 hvězd">
+          <div class="stars">
+            <svg class="star star--small" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="star star--small" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="star star--small" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="star star--small" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="star star--small" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           </div>
-          <blockquote>
-            <p itemprop="reviewBody">"Pořádali jsme odměnovou akci pro 25 obchodníků. Staré Město jako kulisa bylo perfektní. Celá hra trvala 3 hodiny, tempo bylo příjemné a nikdo se nenudil. Skvělý Game Master, který dokázal improvizovat, když jsme se trochu zasekli."</p>
-          </blockquote>
-          <div class="review-card__author">
-            <span class="review-card__name" itemprop="author">Tomáš K.</span>
-            <span class="review-card__role">Obchodní ředitel, pojišťovací skupina</span>
+        </div>
+        <blockquote class="review-card__text">„Konečně teambuilding, který naši zaměstnanci skutečně chtěli zažít. Nikdo nebyl přesvědčován — všichni přišli dobrovolně a zapojili se naplno."</blockquote>
+      </article>
+
+      <!-- Review 6 -->
+      <article class="review-card" role="listitem">
+        <div class="review-card__header">
+          <div>
+            <p class="review-card__name">Lenka P.</p>
+            <p class="review-card__platform">HR ředitelka — Google</p>
           </div>
-          <div class="review-card__meta">
-            <span class="review-card__platform review-card__platform--facebook">
-              <svg viewBox="0 0 24 24" width="16" height="16" aria-label="Facebook recenze"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="#1877F2"/></svg>
-              Facebook
-            </span>
-            <time itemprop="datePublished" datetime="2024-08-12">Srpen 2024</time>
+        </div>
+        <div class="review-card__stars" aria-label="5 z 5 hvězd">
+          <div class="stars">
+            <svg class="star star--small" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="star star--small" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="star star--small" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="star star--small" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="star star--small" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           </div>
-        </article>
-        <!-- Review 5 -->
-        <article class="review-card" role="listitem" itemscope itemtype="https://schema.org/Review">
-          <div class="review-card__stars" aria-label="5 hvězd z 5">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#c9a84c"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#c9a84c"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#c9a84c"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#c9a84c"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#c9a84c"/></svg>
+        </div>
+        <blockquote class="review-card__text">„Nejlepší teambuilding, který jsem za 12 let v HR zorganizovala. Věkové rozpětí v naší firmě je 22–61 let a všichni si to užili stejnou měrou. Vyšehrad byl úžasná kulisa. Přijdeme znovu."</blockquote>
+      </article>
+
+      <!-- Review 7 -->
+      <article class="review-card" role="listitem">
+        <div class="review-card__header">
+          <div>
+            <p class="review-card__name">Tomáš K.</p>
+            <p class="review-card__platform">Obchodní ředitel — Facebook</p>
           </div>
-          <blockquote>
-            <p itemprop="reviewBody">"¡Una experiencia increíble! Organizamos el team building para nuestro equipo europeo de 35 personas. La ruta de las locaciones de películas fue perfecta — todo el mundo reconocía los lugares de Amadeus y Mission Impossible. El Game Master habló perfecto español."</p>
-          </blockquote>
-          <div class="review-card__author">
-            <span class="review-card__name" itemprop="author">Carlos R.</span>
-            <span class="review-card__role">Director de Recursos Humanos, empresa farmacéutica</span>
+        </div>
+        <div class="review-card__stars" aria-label="5 z 5 hvězd">
+          <div class="stars">
+            <svg class="star star--small" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="star star--small" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="star star--small" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="star star--small" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="star star--small" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           </div>
-          <div class="review-card__meta">
-            <span class="review-card__platform review-card__platform--tripadvisor">
-              <svg viewBox="0 0 24 24" width="16" height="16" aria-label="TripAdvisor recenze"><circle cx="6.5" cy="12" r="5" fill="#00AF87"/><circle cx="17.5" cy="12" r="5" fill="#00AF87"/><circle cx="12" cy="8" r="3" fill="#00AF87"/></svg>
-              Tripadvisor
-            </span>
-            <time itemprop="datePublished" datetime="2024-07-25">Červenec 2024</time>
+        </div>
+        <blockquote class="review-card__text">„Pořádali jsme odměnovou akci pro 25 obchodníků. Staré Město jako kulisa bylo perfektní. Celá hra trvala 3 hodiny, tempo bylo příjemné a nikdo se nenudil. Skvělý Game Master, který dokázal improvizovat."</blockquote>
+      </article>
+
+      <!-- Review 8 -->
+      <article class="review-card" role="listitem">
+        <div class="review-card__header">
+          <div>
+            <p class="review-card__name">Petra V.</p>
+            <p class="review-card__platform">Office Manager — TripAdvisor</p>
           </div>
-        </article>
-        <!-- Review 6 -->
-        <article class="review-card" role="listitem" itemscope itemtype="https://schema.org/Review">
-          <div class="review-card__stars" aria-label="5 hvězd z 5">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#c9a84c"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#c9a84c"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#c9a84c"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#c9a84c"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#c9a84c"/></svg>
+        </div>
+        <div class="review-card__stars" aria-label="5 z 5 hvězd">
+          <div class="stars">
+            <svg class="star star--small" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="star star--small" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="star star--small" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="star star--small" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="star star--small" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           </div>
-          <blockquote>
-            <p itemprop="reviewBody">"Nejlepší teambuilding, který jsem za 12 let v HR zorganizovala. Věkové rozpětí v naší firmě je 22–61 let a všichni si to užili stejnou měrou. Vyšehrad byl úžasná kulisa. Přijdeme znovu."</p>
-          </blockquote>
-          <div class="review-card__author">
-            <span class="review-card__name" itemprop="author">Lenka P.</span>
-            <span class="review-card__role">HR ředitelka, mediální agentura</span>
-          </div>
-          <div class="review-card__meta">
-            <span class="review-card__platform review-card__platform--google">
-              <svg viewBox="0 0 24 24" width="16" height="16" aria-label="Google recenze"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-              Google
-            </span>
-            <time itemprop="datePublished" datetime="2024-06-03">Červen 2024</time>
-          </div>
-        </article>
-        <!-- Review 7 -->
-        <article class="review-card" role="listitem" itemscope itemtype="https://schema.org/Review">
-          <div class="review-card__stars" aria-label="5 hvězd z 5">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#c9a84c"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#c9a84c"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#c9a84c"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#c9a84c"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#c9a84c"/></svg>
-          </div>
-          <blockquote>
-            <p itemprop="reviewBody">"We booked the Karlín route for our fintech team of 18. The neighbourhood is so vibrant and the clues were cleverly woven into the street art and architecture. A completely different side of Prague. Our team is still talking about it."</p>
-          </blockquote>
-          <div class="review-card__author">
-            <span class="review-card__name" itemprop="author">Anna B.</span>
-            <span class="review-card__role">People &amp; Culture Lead, fintech startup</span>
-          </div>
-          <div class="review-card__meta">
-            <span class="review-card__platform review-card__platform--google">
-              <svg viewBox="0 0 24 24" width="16" height="16" aria-label="Google recenze"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-              Google
-            </span>
-            <time itemprop="datePublished" datetime="2024-05-17">Květen 2024</time>
-          </div>
-        </article>
-        <!-- Review 8 -->
-        <article class="review-card" role="listitem" itemscope itemtype="https://schema.org/Review">
-          <div class="review-card__stars" aria-label="5 hvězd z 5">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#c9a84c"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#c9a84c"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#c9a84c"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#c9a84c"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#c9a84c"/></svg>
-          </div>
-          <blockquote>
-            <p itemprop="reviewBody">"Hradčany trasa byla naprosto úchvatná. Pršelo, ale to nám vůbec nevadilo — Game Master měl záložní plán a zábava pokračovala bez přerušení. Tak se dělá profesionální teambuilding."</p>
-          </blockquote>
-          <div class="review-card__author">
-            <span class="review-card__name" itemprop="author">Petra V.</span>
-            <span class="review-card__role">Office Manager, poradenská firma</span>
-          </div>
-          <div class="review-card__meta">
-            <span class="review-card__platform review-card__platform--facebook">
-              <svg viewBox="0 0 24 24" width="16" height="16" aria-label="Facebook recenze"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="#1877F2"/></svg>
-              Facebook
-            </span>
-            <time itemprop="datePublished" datetime="2024-04-08">Duben 2024</time>
-          </div>
-        </article>
-      </div>
-      <!-- To replace with live widget in future: Google Places API or Elfsight Reviews widget -->
-      <div class="carousel-dots" aria-label="Navigace recenzí" role="tablist">
-        <button class="carousel-dot active" role="tab"></button>
-        <button class="carousel-dot" role="tab"></button>
-        <button class="carousel-dot" role="tab"></button>
-        <button class="carousel-dot" role="tab"></button>
-        <button class="carousel-dot" role="tab"></button>
-        <button class="carousel-dot" role="tab"></button>
-        <button class="carousel-dot" role="tab"></button>
-        <button class="carousel-dot" role="tab"></button>
-      </div>
+        </div>
+        <blockquote class="review-card__text">„Hradčany trasa byla naprosto úchvatná. Pršelo, ale to nám vůbec nevadilo — Game Master měl záložní plán a zábava pokračovala bez přerušení. Tak se dělá profesionální teambuilding."</blockquote>
+      </article>
+
     </div>
   </section>
 
-  <!-- Blog Section (Preview) -->
-  <section class="blog-section" id="blog" aria-labelledby="blog-heading">
+
+  <!-- ========================================================================
+       BLOG
+       ======================================================================== -->
+  <section class="blog-section" id="blog" aria-labelledby="blog-title">
     <div class="container">
-      <div class="section-header" data-animate>
-        <p class="text-label text-gold">Průvodce</p>
-        <h2 id="blog-heading" data-i18n="blog.title">Průvodce teambuildingem</h2>
-        <p data-i18n="blog.subtitle">Tipy, inspirace a průvodci pro HR manažery a organizátory firemních akcí</p>
+
+      <div class="blog-section__header">
+        <div class="blog-section__header-row">
+          <div>
+            <p class="text-label text-gold">Průvodce</p>
+            <h2 id="blog-title" style="margin-top:8px;">Průvodce</h2>
+          </div>
+          <a href="/treasurehunt/blog/" class="btn btn-outline" style="height:44px;padding:0 24px;font-size:13px;">
+            Všechny články
+          </a>
+        </div>
+        <p class="text-muted">Tipy a inspirace pro organizátory firemních akcí v Praze</p>
       </div>
+
       <div class="blog-grid" data-animate-stagger>
-        <article class="blog-card" data-animate>
-          <a href="/treasurehunt/blog/nejlepsi-teambuilding-v-praze/" class="blog-card__link">
-            <div class="blog-card__img-wrap">
-              <img src="/treasurehunt/images/optimized/team-action-2-400.webp" srcset="/treasurehunt/images/optimized/team-action-2-400.webp 400w, /treasurehunt/images/optimized/team-action-2-800.webp 800w" sizes="(max-width:768px) 100vw, 400px" alt="Týmy soutěžící při Treasure Hunt teambuildingu v Praze" width="400" height="225" loading="lazy">
+
+        <!-- Blog post 1 -->
+        <article class="blog-card fade-up">
+          <a href="/treasurehunt/blog/nejlepsi-teambuilding-praha/" aria-label="Číst článek: Nejlepší teambuilding v Praze: upřímné srovnání">
+            <div class="blog-card__image">
+              <picture>
+                <source srcset="/treasurehunt/images/optimized/prague-architecture-400.webp 400w, /treasurehunt/images/optimized/prague-architecture-800.webp 800w" type="image/webp">
+                <img src="/treasurehunt/images/optimized/prague-architecture-800.webp" alt="Historická pražská architektura — kulisa pro nejlepší teambuilding" width="800" height="450" loading="lazy">
+              </picture>
             </div>
             <div class="blog-card__body">
-              <span class="blog-card__tag">Teambuilding</span>
-              <h3 class="blog-card__title">Proč je Treasure Hunt nejlepší teambuilding v Praze</h3>
-              <p class="blog-card__excerpt">Zjistěte, proč si právě Treasure Hunt vybírají firmy jako Google, Deutsche Bank a stovky dalších pro své teambuildingové akce v Praze.</p>
-              <span class="blog-card__readmore" data-i18n="blog.readmore">Číst dál →</span>
+              <span class="blog-card__tag">Průvodce</span>
+              <h3 class="blog-card__title">Nejlepší teambuilding v Praze: upřímné srovnání</h3>
+              <p class="blog-card__excerpt">
+                Vyzkoušeli jsme pět formátů. Tady je to, co skutečně stmeluje týmy, versus to, co jen zaplní páteční odpoledne.
+              </p>
+              <div class="blog-card__footer">
+                <span class="blog-card__date">Březen 2025</span>
+                <span class="blog-card__read-more">Číst více →</span>
+              </div>
             </div>
           </a>
         </article>
-        <article class="blog-card" data-animate>
-          <a href="/treasurehunt/blog/jak-vybrat-teambuilding/" class="blog-card__link">
-            <div class="blog-card__img-wrap">
-              <img src="/treasurehunt/images/optimized/team-group-2-400.webp" srcset="/treasurehunt/images/optimized/team-group-2-400.webp 400w, /treasurehunt/images/optimized/team-group-2-800.webp 800w" sizes="(max-width:768px) 100vw, 400px" alt="Různorodá skupina kolegů při teambuildingu v Praze" width="400" height="225" loading="lazy">
+
+        <!-- Blog post 2 -->
+        <article class="blog-card fade-up">
+          <a href="/treasurehunt/blog/filmove-lokace-praha/" aria-label="Číst článek: Pražské filmové lokace: 12 míst, která musí navštívit každý filmový nadšenec">
+            <div class="blog-card__image">
+              <picture>
+                <source srcset="/treasurehunt/images/optimized/location-movie-400.webp 400w, /treasurehunt/images/optimized/location-movie-800.webp 800w" type="image/webp">
+                <img src="/treasurehunt/images/optimized/location-movie-800.webp" alt="Pražské filmové lokace — historická místa natáčení" width="800" height="450" loading="lazy">
+              </picture>
             </div>
             <div class="blog-card__body">
-              <span class="blog-card__tag">HR průvodce</span>
-              <h3 class="blog-card__title">Jak vybrat teambuilding pro různorodý tým</h3>
-              <p class="blog-card__excerpt">Praktický průvodce pro HR manažery: jak najít aktivitu, která bude fungovat pro všechny bez výjimky.</p>
-              <span class="blog-card__readmore" data-i18n="blog.readmore">Číst dál →</span>
+              <span class="blog-card__tag">Trasy</span>
+              <h3 class="blog-card__title">Pražské filmové lokace: 12 míst, která musí navštívit každý filmový nadšenec</h3>
+              <p class="blog-card__excerpt">
+                Od Mission: Impossible po Amadeus — lokace, které z Prahy udělaly filmové město.
+              </p>
+              <div class="blog-card__footer">
+                <span class="blog-card__date">Únor 2025</span>
+                <span class="blog-card__read-more">Číst více →</span>
+              </div>
             </div>
           </a>
         </article>
-        <article class="blog-card" data-animate>
-          <a href="/treasurehunt/blog/filmove-lokace-praha/" class="blog-card__link">
-            <div class="blog-card__img-wrap">
-              <img src="/treasurehunt/images/optimized/prague-architecture-400.webp" srcset="/treasurehunt/images/optimized/prague-architecture-400.webp 400w, /treasurehunt/images/optimized/prague-architecture-800.webp 800w" sizes="(max-width:768px) 100vw, 400px" alt="Historická architektura Prahy použitá ve světových filmech" width="400" height="225" loading="lazy">
+
+        <!-- Blog post 3 -->
+        <article class="blog-card fade-up">
+          <a href="/treasurehunt/blog/firemni-akce-praha/" aria-label="Číst článek: Firemní akce v Praze: kompletní průvodce plánováním">
+            <div class="blog-card__image">
+              <picture>
+                <source srcset="/treasurehunt/images/optimized/team-solving-clues-1-400.webp 400w, /treasurehunt/images/optimized/team-solving-clues-1-800.webp 800w" type="image/webp">
+                <img src="/treasurehunt/images/optimized/team-solving-clues-1-800.webp" alt="Různorodá skupina kolegů při firemní akci v Praze" width="800" height="450" loading="lazy">
+              </picture>
             </div>
             <div class="blog-card__body">
-              <span class="blog-card__tag">Praha</span>
-              <h3 class="blog-card__title">Kde se točily světové filmy v Praze</h3>
-              <p class="blog-card__excerpt">Amadeus, Mission Impossible, Kafka... Praha hraje v hollywoodských filmech víc, než tušíte. Průvodce filmovými lokacemi.</p>
-              <span class="blog-card__readmore" data-i18n="blog.readmore">Číst dál →</span>
+              <span class="blog-card__tag">Plánování</span>
+              <h3 class="blog-card__title">Firemní akce v Praze: kompletní průvodce plánováním</h3>
+              <p class="blog-card__excerpt">
+                Vše, co potřebujete vědět pro organizaci firemní akce v Praze — logistika, rozpočet a čemu se vyhnout.
+              </p>
+              <div class="blog-card__footer">
+                <span class="blog-card__date">Leden 2025</span>
+                <span class="blog-card__read-more">Číst více →</span>
+              </div>
             </div>
           </a>
         </article>
-      </div>
-      <div class="blog-section__cta" data-animate>
-        <a href="/treasurehunt/blog/" class="btn btn--outline">Všechny články</a>
+
       </div>
     </div>
   </section>
 
-  <!-- FAQ Section -->
-  <section class="faq-section" id="faq" aria-labelledby="faq-heading">
+
+  <!-- ========================================================================
+       FAQ
+       ======================================================================== -->
+  <section class="faq-section" id="faq" aria-labelledby="faq-title">
     <div class="container">
-      <div class="section-header" data-animate>
+
+      <header class="faq-section__header" data-animate>
         <p class="text-label text-gold">Časté otázky</p>
-        <h2 id="faq-heading" data-i18n="faq.title">Časté otázky</h2>
-      </div>
-      <div class="faq-list" data-animate>
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false" aria-controls="faq-1">
-            <span data-i18n="faq.1.q">Máme lidi, kteří nejsou vůbec sportovní. Zvládnou to?</span>
-            <svg class="faq-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="#c9a84c" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+        <h2 id="faq-title">Časté otázky</h2>
+      </header>
+
+      <div class="faq-list" role="list">
+
+        <!-- FAQ 1 -->
+        <div class="faq-item" role="listitem">
+          <button class="faq-question" aria-expanded="false">
+            <span>Je to skutečně vhodné pro teambuilding?</span>
+            <span class="faq-question__icon" aria-hidden="true">&#8964;</span>
           </button>
-          <div class="faq-answer" id="faq-1" role="region">
-            <p data-i18n="faq.1.a">Absolutně. Treasure Hunt Prague je procházka tempem skupiny — žádný běh, žádné lezení, žádná fyzická náročnost. Trasa je navržena tak, aby ji zvládl každý. Věk ani kondice nehrají roli.</p>
+          <div class="faq-answer">
+            <div class="faq-answer__inner">
+              Absolutně. Treasure Hunt Prague je navržen právě pro firemní teambuilding. Hra vytváří přirozenou spolupráci díky sdíleným výzvám, zdravé soutěžní atmosféře a potřebě kombinovat různé dovednosti. Žádné trapné icebreakery — spolupráce vzniká sama od sebe.
+            </div>
           </div>
         </div>
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false" aria-controls="faq-2">
-            <span data-i18n="faq.2.q">Náš tým je hodně různorodý — různý věk, různé zázemí. Bude to fungovat?</span>
-            <svg class="faq-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="#c9a84c" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+
+        <!-- FAQ 2 -->
+        <div class="faq-item" role="listitem">
+          <button class="faq-question" aria-expanded="false">
+            <span>Co když mají někteří účastníci problémy s mobilitou?</span>
+            <span class="faq-question__icon" aria-hidden="true">&#8964;</span>
           </button>
-          <div class="faq-answer" id="faq-2" role="region">
-            <p data-i18n="faq.2.a">To je přesně to, co nás odlišuje. Hra je navržena tak, aby každý typ osobnosti našel svou roli — analytici luštění kódů, kreativci hledají vizuální vodítka, organizátoři koordinují tým. Různorodost je výhoda, ne překážka.</p>
+          <div class="faq-answer">
+            <div class="faq-answer__inner">
+              Žádný problém. Treasure Hunt Prague je procházka příjemným tempem — žádný běh, lezení ani fyzická náročnost. Trasy jsou navrženy tak, aby je zvládl každý. Při specifických požadavcích na bezbariérovost nás prosím předem informujte — trasu podle toho přizpůsobíme.
+            </div>
           </div>
         </div>
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false" aria-controls="faq-3">
-            <span data-i18n="faq.3.q">Jaká je minimální a maximální velikost skupiny?</span>
-            <svg class="faq-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="#c9a84c" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+
+        <!-- FAQ 3 -->
+        <div class="faq-item" role="listitem">
+          <button class="faq-question" aria-expanded="false">
+            <span>Jaký je minimální a maximální počet účastníků?</span>
+            <span class="faq-question__icon" aria-hidden="true">&#8964;</span>
           </button>
-          <div class="faq-answer" id="faq-3" role="region">
-            <p data-i18n="faq.3.a">Minimum jsou 3 týmy, tedy přibližně 9 lidí. Maximum jsme dosud realizovali pro 300 účastníků. Větší skupiny jednoduše rozdělíme do více soutěžních týmů, které soupeří na stejné trase.</p>
+          <div class="faq-answer">
+            <div class="faq-answer__inner">
+              Hra je určena pro skupiny od 9 do 300 účastníků. Menší skupiny hrají jako jedna jednotka, zatímco větší skupiny se automaticky rozdělí do soutěžních týmů po 4–6 osobách. Optimum je 20–60 účastníků — v tomto rozsahu je dynamika nejživější. Pro skupiny nad 100 osob nasazujeme více Game Masterů, aby byla zachována vysoká kvalita.
+            </div>
           </div>
         </div>
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false" aria-controls="faq-4">
-            <span data-i18n="faq.4.q">Co se stane, když prší?</span>
-            <svg class="faq-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="#c9a84c" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+
+        <!-- FAQ 4 -->
+        <div class="faq-item" role="listitem">
+          <button class="faq-question" aria-expanded="false">
+            <span>Co se stane, když prší?</span>
+            <span class="faq-question__icon" aria-hidden="true">&#8964;</span>
           </button>
-          <div class="faq-answer" id="faq-4" role="region">
-            <p data-i18n="faq.4.a">Každá akce má záložní plán pro špatné počasí zahrnutý v ceně. Pražské počasí známe dobře a vždy najdeme řešení — ať už přizpůsobením trasy, načasováním nebo alternativním programem. Nikdy jsme pro počasí nemuseli akci zrušit.</p>
+          <div class="faq-answer">
+            <div class="faq-answer__inner">
+              Všechny trasy jsou navrženy tak, aby se konaly za jakéhokoli počasí. Lehký déšť není problém — mnoho týmů ho vnímá jako přidané dobrodružství. Váš Game Master má vždy záložní plán, který přesune části trasy do zastřešených prostor. Při skutečně extrémním počasí (bouřka, vichřice) přesuneme akci bezplatně na náhradní termín dle vašeho výběru.
+            </div>
           </div>
         </div>
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false" aria-controls="faq-5">
-            <span data-i18n="faq.5.q">Jak dlouho trvá Treasure Hunt?</span>
-            <svg class="faq-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="#c9a84c" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+
+        <!-- FAQ 5 -->
+        <div class="faq-item" role="listitem">
+          <button class="faq-question" aria-expanded="false">
+            <span>Jak dlouho trvá jedna Treasure Hunt?</span>
+            <span class="faq-question__icon" aria-hidden="true">&#8964;</span>
           </button>
-          <div class="faq-answer" id="faq-5" role="region">
-            <p data-i18n="faq.5.a">Standardní délka je 2,5 až 3,5 hodiny včetně úvodního briefingu a závěrečného vyhlášení výsledků. Délku lze přizpůsobit vašemu programu — pokud potřebujete kratší nebo delší verzi, rádi vyjdeme vstříc.</p>
+          <div class="faq-answer">
+            <div class="faq-answer__inner">
+              Aktivní hra trvá 2,5 až 3,5 hodiny — dle zvolené trasy a obtížnosti. K tomu přičtěte 15–20 minut na úvodní briefing a 20–30 minut na závěrečné předávání cen. Počítejte celkem s půl dnem. Na přání lze formát zkrátit na 2 hodiny nebo rozšířit na celý den s polední přestávkou — uveďte to prosím v poptávce.
+            </div>
           </div>
         </div>
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false" aria-controls="faq-6">
-            <span data-i18n="faq.6.q">Lze upravit témata nebo stopy pro naši firmu?</span>
-            <svg class="faq-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="#c9a84c" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+
+        <!-- FAQ 6 -->
+        <div class="faq-item" role="listitem">
+          <button class="faq-question" aria-expanded="false">
+            <span>Lze přizpůsobit téma nebo nápovědy?</span>
+            <span class="faq-question__icon" aria-hidden="true">&#8964;</span>
           </button>
-          <div class="faq-answer" id="faq-6" role="region">
-            <p data-i18n="faq.6.a">Ano. Nabízíme volitelné brandování — od potisknutých hádankových karet přes firemní témata až po stopy zaměřené na hodnoty vaší firmy nebo produkty. Ideální pro onboarding, produktové launche nebo jubilejní oslavy.</p>
+          <div class="faq-answer">
+            <div class="faq-answer__inner">
+              Ano — a to patří k našim nejoblíbenějším možnostem. Firemní hodnoty, produkty, interní témata nebo název vaší značky lze přímo zabudovat do hádanek a nápověd. Výsledkem je zcela personalizovaný zážitek, který váš tým propojí s firmou zcela novým způsobem. Personalizace je možná při dostatečném předstihu 2 týdnů. Uveďte to v poptávce a detaily probereme v krátkém telefonátu.
+            </div>
           </div>
         </div>
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false" aria-controls="faq-7">
-            <span data-i18n="faq.7.q">Jak vybrat tu správnou lokaci?</span>
-            <svg class="faq-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="#c9a84c" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+
+        <!-- FAQ 7 -->
+        <div class="faq-item" role="listitem">
+          <button class="faq-question" aria-expanded="false">
+            <span>Kterou trasu si vybrat?</span>
+            <span class="faq-question__icon" aria-hidden="true">&#8964;</span>
           </button>
-          <div class="faq-answer" id="faq-7" role="region">
-            <p data-i18n="faq.7.a">Závisí na složení týmu a preferencích. Staré Město je klasická volba pro mezinárodní skupiny. Vyšehrad je ideální pro relaxovanější atmosféru. Karlín přitahuje kreativní a tech firmy. Filmové lokace fungují skvěle pro mezinárodní týmy. Rádi vám poradíme — napište nám o svém týmu.</p>
+          <div class="faq-answer">
+            <div class="faq-answer__inner">
+              Závisí na složení týmu a preferencích. Staré Město je naše nejoblíbenější trasa — ideální pro prvonavštěvníky a mezinárodní skupiny, plná historie a vizuálních překvapení. Hradčany je nejnádhernější trasa s úchvatnými výhledy. Vyšehrad nabízí klidnější tempo a hodí se pro kreativní nebo technologické týmy. Karlín je nejmodernější varianta s urbánním flérem. Trasa filmových lokací je skvělý konverzační starter pro filmové fanoušky. Nevíte si rady? Rádi vám poradíme — napište nám o svém týmu.
+            </div>
           </div>
         </div>
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false" aria-controls="faq-8">
-            <span data-i18n="faq.8.q">Jak daleko dopředu je třeba rezervovat?</span>
-            <svg class="faq-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="#c9a84c" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+
+        <!-- FAQ 8 -->
+        <div class="faq-item" role="listitem">
+          <button class="faq-question" aria-expanded="false">
+            <span>Jak dlouho předem je potřeba rezervovat?</span>
+            <span class="faq-question__icon" aria-hidden="true">&#8964;</span>
           </button>
-          <div class="faq-answer" id="faq-8" role="region">
-            <p data-i18n="faq.8.a">Doporučujeme rezervovat alespoň 2–3 týdny předem, zejména v sezóně (duben–říjen). Pro velké skupiny nad 50 lidí preferujeme 4–6 týdnů. V nouzi se ale vždy pokusíme pomoci — klidně se zeptejte na termín i na kratší dobu dopředu.</p>
+          <div class="faq-answer">
+            <div class="faq-answer__inner">
+              V hlavní sezóně (duben–říjen) doporučujeme rezervovat alespoň 3 týdny předem. Oblíbené termíny — zejména pátky a skupiny nad 50 osob — bývají zabrány ještě dříve. Mimo sezónu jsme výrazně flexibilnější a krátkodobé rezervace s 1–2 týdny předstihu jsou zpravidla možné. Čím dříve poptáte, tím větší výběr termínů máte.
+            </div>
           </div>
         </div>
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false" aria-controls="faq-9">
-            <span data-i18n="faq.9.q">Kolik to stojí?</span>
-            <svg class="faq-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="#c9a84c" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+
+        <!-- FAQ 9 -->
+        <div class="faq-item" role="listitem">
+          <button class="faq-question" aria-expanded="false">
+            <span>Kolik to stojí?</span>
+            <span class="faq-question__icon" aria-hidden="true">&#8964;</span>
           </button>
-          <div class="faq-answer" id="faq-9" role="region">
-            <p data-i18n="faq.9.a">Cena závisí na počtu účastníků, zvolené lokaci a případných rozšířeních (brandování, catering atd.). Pošlete nám nezávaznou poptávku s velikostí skupiny a datem — obratem vám připravíme individuální nabídku.</p>
+          <div class="faq-answer">
+            <div class="faq-answer__inner">
+              Cena se stanovuje individuálně podle počtu účastníků, zvolené trasy a míry přizpůsobení. Není stanoven pevný tarif za osobu — vytváříme nabídku na míru, která transparentně uvádí vše zahrnuté. Vždy je součástí: Game Master, přístup do aplikace, materiály, fotodokumentace a certifikáty. Žádné skryté poplatky. Vyplňte formulář a do 24 hodin obdržíte konkrétní nabídku pro váš tým.
+            </div>
           </div>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Contact Form Section -->
-  <section class="contact-section" id="contact" aria-labelledby="contact-heading">
+
+  <!-- ========================================================================
+       CONTACT FORM
+       ======================================================================== -->
+  <section class="contact-section" id="contact" aria-labelledby="contact-title">
     <div class="container">
-      <div class="contact-section__inner">
-        <div class="contact-section__header" data-animate>
-          <p class="text-label text-gold">Poptávka</p>
-          <h2 id="contact-heading" data-i18n="contact.title">Nezávazná poptávka</h2>
-          <p data-i18n="contact.subtitle">Řekněte nám o svém týmu — odpovíme do 24 hodin s individuální nabídkou.</p>
-        </div>
-        <form class="contact-form" id="contact-form" novalidate>
-          <div class="contact-form__row">
-            <div class="contact-form__field">
-              <label for="name" data-i18n="contact.name">Jméno a příjmení</label>
-              <input type="text" id="name" name="name" autocomplete="name" required data-i18n-attr="placeholder" placeholder="Vaše jméno">
+
+      <div class="contact-grid">
+
+        <!-- Form column -->
+        <div>
+          <header style="margin-bottom:40px;" data-animate>
+            <p class="text-label text-gold">Poptávka</p>
+            <h2 id="contact-title" style="margin-top:8px;">Nezávazná poptávka</h2>
+            <p class="text-muted" style="margin-top:16px;max-width:520px;line-height:1.7;">
+              Řekněte nám o svém týmu — odpovíme do 24 hodin s individuální nabídkou.
+            </p>
+          </header>
+
+          <form class="contact-form" id="contact-form" novalidate aria-label="Poptávkový formulář">
+
+            <!-- Name + Company -->
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="contact-name">Jméno a příjmení <span aria-hidden="true">*</span></label>
+                <input
+                  class="form-control"
+                  type="text"
+                  id="contact-name"
+                  name="name"
+                  placeholder="Vaše celé jméno"
+                  required
+                  autocomplete="name">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="contact-company">Název firmy <span aria-hidden="true">*</span></label>
+                <input
+                  class="form-control"
+                  type="text"
+                  id="contact-company"
+                  name="company"
+                  placeholder="Název vaší firmy"
+                  required
+                  autocomplete="organization">
+              </div>
             </div>
-            <div class="contact-form__field">
-              <label for="company" data-i18n="contact.company">Firma</label>
-              <input type="text" id="company" name="company" autocomplete="organization" data-i18n-attr="placeholder" placeholder="Název firmy">
+
+            <!-- Email + Phone -->
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="contact-email">Firemní e-mail <span aria-hidden="true">*</span></label>
+                <input
+                  class="form-control"
+                  type="email"
+                  id="contact-email"
+                  name="email"
+                  placeholder="vas@firma.cz"
+                  required
+                  autocomplete="email">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="contact-phone">Telefonní číslo</label>
+                <div style="display:flex;gap:8px;">
+                  <div class="form-select-wrap" style="flex-shrink:0;width:130px;">
+                    <select class="form-control" id="phone-prefix" name="phone-prefix" aria-label="Předvolba země">
+                      <!-- populated by JS -->
+                    </select>
+                  </div>
+                  <input
+                    class="form-control"
+                    type="tel"
+                    id="contact-phone"
+                    name="phone"
+                    placeholder="Vaše telefonní číslo"
+                    autocomplete="tel">
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="contact-form__row">
-            <div class="contact-form__field">
-              <label for="email" data-i18n="contact.email">E-mail</label>
-              <input type="email" id="email" name="email" autocomplete="email" required data-i18n-attr="placeholder" placeholder="vas@email.cz">
+
+            <!-- Team size -->
+            <div class="form-group">
+              <label class="form-label" for="team-size">Počet účastníků <span aria-hidden="true">*</span></label>
+              <div class="form-number-wrap">
+                <button type="button" class="form-number-btn qty-minus" aria-label="Méně">&#8722;</button>
+                <input
+                  class="form-number-input"
+                  type="number"
+                  id="team-size"
+                  name="teamsize"
+                  min="9"
+                  max="300"
+                  value="20"
+                  required
+                  aria-describedby="teamsize-hint">
+                <button type="button" class="form-number-btn qty-plus" aria-label="Více">&#43;</button>
+              </div>
+              <p id="teamsize-hint" style="font-size:12px;color:var(--color-muted);margin-top:4px;">min. 9 osob</p>
             </div>
-            <div class="contact-form__field contact-form__field--phone">
-              <label for="phone" data-i18n="contact.phone">Telefon</label>
-              <div class="phone-field">
-                <select class="phone-country" id="phone-country" aria-label="Předvolba">
-                  <option value="+420">&#x1F1E8;&#x1F1FF; +420</option>
-                  <option value="+1">&#x1F1FA;&#x1F1F8; +1</option>
-                  <option value="+44">&#x1F1EC;&#x1F1E7; +44</option>
-                  <option value="+49">&#x1F1E9;&#x1F1EA; +49</option>
-                  <option value="+43">&#x1F1E6;&#x1F1F9; +43</option>
-                  <option value="+41">&#x1F1E8;&#x1F1ED; +41</option>
-                  <option value="+48">&#x1F1F5;&#x1F1F1; +48</option>
-                  <option value="+36">&#x1F1ED;&#x1F1FA; +36</option>
-                  <option value="+33">&#x1F1EB;&#x1F1F7; +33</option>
-                  <option value="+34">&#x1F1EA;&#x1F1F8; +34</option>
+
+            <!-- Game language + Location -->
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="game-language">Jazyk hry</label>
+                <div class="form-select-wrap">
+                  <select class="form-control" id="game-language" name="language">
+                    <option value="cs" selected>Čeština</option>
+                    <option value="en">Angličtina</option>
+                    <option value="de">Němčina</option>
+                    <option value="es">Španělština</option>
+                    <option value="fr">Francouzština</option>
+                    <option value="pl">Polština</option>
+                    <option value="it">Italština</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="game-location">Preferovaná trasa</label>
+                <div class="form-select-wrap">
+                  <select class="form-control" id="game-location" name="location">
+                    <option value="">Vyberte prosím…</option>
+                    <option value="oldtown">Staré Město</option>
+                    <option value="hradcany">Hradčany</option>
+                    <option value="vysehrad">Vyšehrad</option>
+                    <option value="karlin">Karlín</option>
+                    <option value="movie">Pražské filmové lokace</option>
+                    <option value="unsure">Pomozte mi vybrat</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- Date + Time -->
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="event-date">Preferované datum</label>
+                <input
+                  class="form-control"
+                  type="date"
+                  id="event-date"
+                  name="date"
+                  min="">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="event-time">Preferovaný čas</label>
+                <input
+                  class="form-control"
+                  type="time"
+                  id="event-time"
+                  name="time">
+              </div>
+            </div>
+
+            <!-- Flexible date checkbox -->
+            <div class="form-group" style="flex-direction:row;align-items:center;gap:12px;">
+              <input
+                type="checkbox"
+                id="flexible-date"
+                name="flexible"
+                style="width:18px;height:18px;accent-color:var(--color-gold);flex-shrink:0;">
+              <label for="flexible-date" style="font-size:14px;color:var(--color-muted);cursor:pointer;">
+                Datum zatím otevřené — sdělte nám svoji dostupnost
+              </label>
+            </div>
+
+            <!-- Special requirements -->
+            <div class="form-group">
+              <label class="form-label" for="contact-requirements">Zvláštní požadavky nebo přání</label>
+              <textarea
+                class="form-control"
+                id="contact-requirements"
+                name="requirements"
+                rows="4"
+                placeholder="Personalizace, bezbariérovost, catering, zvláštní přání…"></textarea>
+            </div>
+
+            <!-- Referral -->
+            <div class="form-group">
+              <label class="form-label" for="contact-referral">Jak jste se o nás dozvěděli?</label>
+              <div class="form-select-wrap">
+                <select class="form-control" id="contact-referral" name="referral">
+                  <option value="">Vyberte prosím…</option>
+                  <option value="google">Google vyhledávání</option>
+                  <option value="recommendation">Doporučení kolegy</option>
+                  <option value="social">Sociální sítě</option>
+                  <option value="tripadvisor">TripAdvisor</option>
+                  <option value="facebook">Facebook</option>
+                  <option value="linkedin">LinkedIn</option>
+                  <option value="other">Jiné</option>
                 </select>
-                <input type="tel" id="phone" name="phone" autocomplete="tel" data-i18n-attr="placeholder" placeholder="123 456 789">
               </div>
             </div>
+
+            <!-- Privacy note -->
+            <p style="font-size:12px;color:var(--color-muted);line-height:1.6;">
+              Odesláním formuláře souhlasíte se zpracováním Vašich údajů v souladu s naší
+              <a href="/treasurehunt/ochrana-udaju/" style="color:var(--color-gold);text-decoration:underline;">Zásadou ochrany osobních údajů</a>.
+            </p>
+
+            <!-- Submit -->
+            <button type="submit" class="btn btn-primary form-submit" style="font-size:15px;height:60px;">
+              Odeslat poptávku — nezávazně
+            </button>
+
+          </form>
+
+          <!-- Success message -->
+          <div class="form-success hidden" role="alert" aria-live="polite" style="margin-top:24px;padding:24px;background:rgba(201,168,76,0.1);border:1px solid var(--color-gold);border-radius:6px;text-align:center;">
+            <p style="font-size:18px;font-weight:500;color:var(--color-gold);margin-bottom:8px;">Děkujeme!</p>
+            <p style="color:var(--color-muted);">Děkujeme! Ozveme se vám do 24 hodin.</p>
           </div>
-          <div class="contact-form__row">
-            <div class="contact-form__field contact-form__field--teamsize">
-              <label for="team-size" data-i18n="contact.teamsize">Počet účastníků</label>
-              <div class="qty-field">
-                <button type="button" class="qty-btn qty-minus" aria-label="Snížit počet">−</button>
-                <input type="number" id="team-size" name="team-size" min="9" max="300" required data-i18n-attr="placeholder" placeholder="Kolik lidí?">
-                <button type="button" class="qty-btn qty-plus" aria-label="Zvýšit počet">+</button>
-              </div>
-            </div>
-            <div class="contact-form__field">
-              <label for="hunt-language" data-i18n="contact.language">Jazyk hry</label>
-              <select id="hunt-language" name="hunt-language" required>
-                <option value="" data-i18n="contact.language.select">Vyberte jazyk</option>
-                <option value="cs">Čeština</option>
-                <option value="en">English</option>
-                <option value="de">Deutsch</option>
-                <option value="es">Español</option>
-                <option value="fr">Français</option>
-                <option value="pl">Polski</option>
-                <option value="it">Italiano</option>
-              </select>
-            </div>
+        </div>
+
+        <!-- Contact info column -->
+        <aside class="contact-info" aria-label="Kontaktní informace">
+
+          <div>
+            <h3 class="contact-info__title">Kontaktujte nás přímo</h3>
+            <p style="font-size:14px;color:var(--color-muted);line-height:1.7;">
+              Preferujete přímý rozhovor? Rádi vás uslyšíme.
+            </p>
           </div>
-          <div class="contact-form__row">
-            <div class="contact-form__field">
-              <label for="location" data-i18n="contact.location">Preferovaná lokace</label>
-              <select id="location" name="location">
-                <option value="" data-i18n="contact.location.select">Vyberte lokaci</option>
-                <option value="old-town" data-i18n="contact.location.oldtown">Staré Město</option>
-                <option value="hradcany" data-i18n="contact.location.hradcany">Hradčany</option>
-                <option value="vysehrad" data-i18n="contact.location.vysehrad">Vyšehrad</option>
-                <option value="karlin" data-i18n="contact.location.karlin">Karlín</option>
-                <option value="movie" data-i18n="contact.location.movie">Filmové lokace Prahy</option>
-                <option value="unsure" data-i18n="contact.location.unsure">Ještě nevím</option>
-              </select>
-            </div>
-          </div>
-          <div class="contact-form__row contact-form__row--date">
-            <div class="contact-form__field">
-              <label for="date" data-i18n="contact.date">Preferovaný datum</label>
-              <input type="date" id="date" name="date" class="date-input" min="">
-            </div>
-            <div class="contact-form__field">
-              <label for="time" data-i18n="contact.time">Preferovaný čas</label>
-              <select id="time" name="time" class="time-input">
-                <option value="">Vyberte čas</option>
-                <option value="08:00">08:00</option>
-                <option value="08:30">08:30</option>
-                <option value="09:00">09:00</option>
-                <option value="09:30">09:30</option>
-                <option value="10:00">10:00</option>
-                <option value="10:30">10:30</option>
-                <option value="11:00">11:00</option>
-                <option value="11:30">11:30</option>
-                <option value="12:00">12:00</option>
-                <option value="12:30">12:30</option>
-                <option value="13:00">13:00</option>
-                <option value="13:30">13:30</option>
-                <option value="14:00">14:00</option>
-                <option value="14:30">14:30</option>
-                <option value="15:00">15:00</option>
-                <option value="15:30">15:30</option>
-                <option value="16:00">16:00</option>
-                <option value="16:30">16:30</option>
-                <option value="17:00">17:00</option>
-                <option value="17:30">17:30</option>
-                <option value="18:00">18:00</option>
-                <option value="18:30">18:30</option>
-                <option value="19:00">19:00</option>
-                <option value="19:30">19:30</option>
-                <option value="20:00">20:00</option>
-              </select>
+
+          <div class="contact-info__item">
+            <div class="contact-info__icon" aria-hidden="true">✉</div>
+            <div>
+              <p class="contact-info__label">E-mail</p>
+              <a href="mailto:info@treasurehuntprague.cz" class="contact-info__value">info@treasurehuntprague.cz</a>
             </div>
           </div>
-          <div class="contact-form__field">
-            <label class="checkbox-label">
-              <input type="checkbox" id="flexible-date" name="flexible-date">
-              <span class="checkbox-custom"></span>
-              <span data-i18n="contact.flexible">Datum ještě nevím / jsem flexibilní</span>
-            </label>
+
+          <div class="contact-info__item">
+            <div class="contact-info__icon" aria-hidden="true">✆</div>
+            <div>
+              <p class="contact-info__label">Telefon</p>
+              <a href="tel:+420XXXXXXXXX" class="contact-info__value">+420 XXX XXX XXX</a>
+            </div>
           </div>
-          <div class="contact-form__field">
-            <label for="requirements" data-i18n="contact.requirements">Speciální požadavky</label>
-            <textarea id="requirements" name="requirements" rows="4" data-i18n-attr="placeholder" placeholder="Počet týmů, speciální přání, firemní téma, datum výročí..."></textarea>
+
+          <div class="contact-info__item">
+            <div class="contact-info__icon" aria-hidden="true">◷</div>
+            <div>
+              <p class="contact-info__label">Doba odezvy</p>
+              <p class="contact-info__value">Do 24 hodin</p>
+            </div>
           </div>
-          <div class="contact-form__field">
-            <label for="referral" data-i18n="contact.referral">Jak jste nás našli?</label>
-            <select id="referral" name="referral">
-              <option value="" data-i18n="contact.referral.select">Vyberte možnost</option>
-              <option value="google" data-i18n="contact.referral.google">Google</option>
-              <option value="social" data-i18n="contact.referral.social">Sociální sítě</option>
-              <option value="friend" data-i18n="contact.referral.friend">Doporučení přítele / kolegy</option>
-              <option value="tripadvisor" data-i18n="contact.referral.tripadvisor">Tripadvisor</option>
-              <option value="facebook" data-i18n="contact.referral.facebook">Facebook</option>
-              <option value="other" data-i18n="contact.referral.other">Jinak</option>
-            </select>
+
+          <div class="contact-info__item">
+            <div class="contact-info__icon" aria-hidden="true">⚑</div>
+            <div>
+              <p class="contact-info__label">Umístění</p>
+              <p class="contact-info__value">Praha, Česká republika</p>
+            </div>
           </div>
-          <button type="submit" class="btn btn--primary btn--full contact-form__submit" data-i18n="contact.submit">
-            Odeslat poptávku — bez závazků
-          </button>
-          <div class="form-success" id="form-success" role="alert" aria-live="polite" hidden>
-            <svg viewBox="0 0 24 24" width="32" height="32" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="#c9a84c" stroke-width="1.5" fill="none"/><path d="M8 12l3 3 5-5" stroke="#c9a84c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <p data-i18n="contact.success">Děkujeme — ozveme se do 24 hodin.</p>
+
+          <!-- Trust signals -->
+          <div>
+            <p class="text-label text-gold" style="margin-bottom:16px;">Důvěra a spolehlivost</p>
+            <div class="trust-signals">
+              <span class="trust-badge">8 let zkušeností</span>
+              <span class="trust-badge">127+ hodnocení</span>
+              <span class="trust-badge">4,9 ★ průměr</span>
+              <span class="trust-badge">300+ účastníků</span>
+              <span class="trust-badge">Záruka spokojenosti</span>
+              <span class="trust-badge">K dispozici v češtině</span>
+            </div>
           </div>
-        </form>
+
+        </aside>
+
       </div>
     </div>
   </section>
 
-</main>
 
-<footer class="footer" role="contentinfo">
-  <div class="container">
-    <div class="footer__grid">
-      <div>
-        <a href="/treasurehunt/" class="footer__logo">Treasure Hunt <span>Prague</span></a>
-        <p class="footer__tagline" data-i18n="footer.tagline">Zážitkový teambuilding v srdci Prahy</p>
+  <!-- ========================================================================
+       STICKY MOBILE CTA
+       ======================================================================== -->
+  <a href="#contact" class="sticky-cta" aria-label="Nezávazná poptávka">
+    <span>Nezávazná poptávka</span>
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+      <path d="M5 12h14M12 5l7 7-7 7"/>
+    </svg>
+  </a>
+
+
+  <!-- ========================================================================
+       FOOTER
+       ======================================================================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+
+      <div class="footer__grid">
+
+        <!-- Brand column -->
+        <div>
+          <a href="/treasurehunt/" class="footer__logo" aria-label="Treasure Hunt Prague domů">
+            Treasure<span>Hunt</span>Prague
+          </a>
+          <p class="footer__tagline">
+            Zážitkový teambuilding v srdci Prahy
+          </p>
+          <div class="footer__social" aria-label="Sociální sítě">
+            <a href="https://facebook.com/treasurehuntprague" class="footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            </a>
+            <a href="https://instagram.com/treasurehuntprague" class="footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="https://linkedin.com/company/treasurehuntprague" class="footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Navigation column -->
+        <div>
+          <p class="footer__nav-title">Navigace</p>
+          <ul class="footer__nav-list" role="list">
+            <li><a href="#why"       class="footer__nav-link">Proč to funguje</a></li>
+            <li><a href="#locations" class="footer__nav-link">Trasy</a></li>
+            <li><a href="#how"       class="footer__nav-link">Jak to probíhá</a></li>
+            <li><a href="#reviews"   class="footer__nav-link">Reference</a></li>
+            <li><a href="#faq"       class="footer__nav-link">FAQ</a></li>
+            <li><a href="#contact"   class="footer__nav-link">Odeslat poptávku</a></li>
+          </ul>
+        </div>
+
+        <!-- Routes column -->
+        <div>
+          <p class="footer__nav-title">Trasy</p>
+          <ul class="footer__nav-list" role="list">
+            <li><a href="#locations" class="footer__nav-link">Staré Město</a></li>
+            <li><a href="#locations" class="footer__nav-link">Hradčany</a></li>
+            <li><a href="#locations" class="footer__nav-link">Vyšehrad</a></li>
+            <li><a href="#locations" class="footer__nav-link">Karlín</a></li>
+            <li><a href="#locations" class="footer__nav-link">Pražské filmové lokace</a></li>
+          </ul>
+        </div>
+
+        <!-- Language + Blog column -->
+        <div>
+          <p class="footer__nav-title">Jazyk</p>
+          <ul class="footer__nav-list" role="list">
+            <li><a href="/treasurehunt/"    class="footer__nav-link is-active" hreflang="cs" aria-current="true" style="color:var(--color-gold);">Čeština</a></li>
+            <li><a href="/treasurehunt/en/" class="footer__nav-link" hreflang="en">English</a></li>
+            <li><a href="/treasurehunt/de/" class="footer__nav-link" hreflang="de">Deutsch</a></li>
+            <li><a href="/treasurehunt/es/" class="footer__nav-link" hreflang="es">Español</a></li>
+          </ul>
+          <p class="footer__nav-title" style="margin-top:28px;">Průvodce</p>
+          <ul class="footer__nav-list" role="list">
+            <li><a href="/treasurehunt/blog/" class="footer__nav-link">Všechny články</a></li>
+            <li><a href="/treasurehunt/blog/nejlepsi-teambuilding-praha/" class="footer__nav-link">Nejlepší teambuilding Praha</a></li>
+            <li><a href="/treasurehunt/blog/filmove-lokace-praha/" class="footer__nav-link">Filmové lokace Praha</a></li>
+          </ul>
+        </div>
+
       </div>
-      <div>
-        <p class="footer__nav-title">Navigace</p>
-        <ul class="footer__nav-list">
-          <li><a href="#why" class="footer__nav-link" data-i18n="nav.why">Proč to funguje</a></li>
-          <li><a href="#locations" class="footer__nav-link" data-i18n="nav.locations">Lokace</a></li>
-          <li><a href="#how" class="footer__nav-link" data-i18n="nav.how">Jak to funguje</a></li>
-          <li><a href="#reviews" class="footer__nav-link" data-i18n="nav.reviews">Recenze</a></li>
-          <li><a href="/treasurehunt/blog/" class="footer__nav-link" data-i18n="nav.blog">Blog</a></li>
-          <li><a href="#faq" class="footer__nav-link" data-i18n="nav.faq">FAQ</a></li>
-        </ul>
+
+      <!-- Bottom bar -->
+      <div class="footer__bottom">
+        <p class="footer__copyright">© 2025 Treasure Hunt Prague. Všechna práva vyhrazena.</p>
+        <nav class="footer__legal" aria-label="Právní odkazy">
+          <a href="/treasurehunt/ochrana-udaju/" class="footer__legal-link">Ochrana osobních údajů</a>
+          <a href="/treasurehunt/obchodni-podminky/" class="footer__legal-link">Obchodní podmínky</a>
+        </nav>
       </div>
-      <div>
-        <p class="footer__nav-title">Jazyk</p>
-        <ul class="footer__nav-list">
-          <li><a href="/treasurehunt/" class="footer__nav-link">Česky</a></li>
-          <li><a href="/treasurehunt/en/" class="footer__nav-link">English</a></li>
-          <li><a href="/treasurehunt/de/" class="footer__nav-link">Deutsch</a></li>
-          <li><a href="/treasurehunt/es/" class="footer__nav-link">Español</a></li>
-        </ul>
-      </div>
+
     </div>
-    <div class="footer__bottom">
-      <p class="footer__copyright" data-i18n="footer.copyright">© 2025 Treasure Hunt Prague. Všechna práva vyhrazena.</p>
-      <nav class="footer__legal" aria-label="Právní dokumenty">
-        <a href="/treasurehunt/ochrana-udaju/" class="footer__legal-link">Ochrana osobních údajů</a>
-        <a href="/treasurehunt/obchodni-podminky/" class="footer__legal-link">Obchodní podmínky</a>
-      </nav>
-    </div>
-  </div>
-</footer>
+  </footer>
 
-<!-- Sticky Mobile CTA -->
-<div class="sticky-cta" id="sticky-cta" aria-hidden="true">
-  <a href="#contact" class="sticky-cta__btn" data-i18n="hero.cta">Nezávazná poptávka</a>
-</div>
 
-<script src="/treasurehunt/js/main.js"></script>
+  <!-- ========================================================================
+       SCRIPTS
+       ======================================================================== -->
+  <script src="/treasurehunt/js/main.js" defer></script>
+
+  <!-- Set date input minimum to today -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var dateInput = document.getElementById('event-date');
+      if (dateInput) {
+        var today = new Date().toISOString().split('T')[0];
+        dateInput.setAttribute('min', today);
+      }
+
+      // Show sticky CTA after scrolling past hero
+      var stickyCta = document.querySelector('.sticky-cta');
+      if (stickyCta) {
+        var hero = document.querySelector('.hero');
+        if (hero) {
+          var heroObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+              if (!entry.isIntersecting) {
+                stickyCta.classList.add('is-visible');
+              } else {
+                stickyCta.classList.remove('is-visible');
+              }
+            });
+          }, { threshold: 0.1 });
+          heroObserver.observe(hero);
+        }
+      }
+
+      // Hamburger menu wiring (supplements main.js class names for this page)
+      var hamburger = document.querySelector('.nav__hamburger');
+      var mobileMenu = document.querySelector('.nav-mobile');
+      var mobileClose = document.querySelector('.nav-mobile__close');
+
+      function openMobileMenu() {
+        if (!mobileMenu) return;
+        mobileMenu.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+        if (hamburger) hamburger.setAttribute('aria-expanded', 'true');
+        mobileMenu.setAttribute('aria-hidden', 'false');
+      }
+
+      function closeMobileMenu() {
+        if (!mobileMenu) return;
+        mobileMenu.classList.remove('is-open');
+        document.body.style.overflow = '';
+        if (hamburger) hamburger.setAttribute('aria-expanded', 'false');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+      }
+
+      if (hamburger) hamburger.addEventListener('click', openMobileMenu);
+      if (mobileClose) mobileClose.addEventListener('click', closeMobileMenu);
+      if (mobileMenu) {
+        mobileMenu.querySelectorAll('a').forEach(function(link) {
+          link.addEventListener('click', closeMobileMenu);
+        });
+      }
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeMobileMenu();
+      });
+    });
+  </script>
+
 </body>
 </html>
