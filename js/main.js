@@ -754,13 +754,13 @@ document.addEventListener('DOMContentLoaded', () => {
    */
   function detectLang() {
     // 1. URL path
-    const pathMatch = window.location.pathname.match(/^\/(en|de|es)(\/|$)/);
+    const pathMatch = window.location.pathname.match(/(?:^|\/)(?:treasurehunt\/)?(en|de|es)(\/|$)/);
     if (pathMatch) return pathMatch[1];
     // Root path (no lang prefix) maps to Czech
-    if (/^\/(cs)?(\/|$)/.test(window.location.pathname)) {
+    if (/^\/(cs)?(\/|$)|\/treasurehunt\/(cs)?(\/|$)/.test(window.location.pathname)) {
       // Only treat it as "cs" if there's no recognisable lang prefix
       const hasOtherPrefix = SUPPORTED_LANGS.filter(l => l !== 'cs').some(
-        l => window.location.pathname.startsWith('/' + l + '/')
+        l => window.location.pathname.includes('/' + l + '/')
       );
       if (!hasOtherPrefix) return 'cs';
     }
@@ -914,8 +914,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }, {
-    threshold:  0.15,
-    rootMargin: '-50px',
+    threshold:  0.05,
+    rootMargin: '0px 0px -20px 0px',
   });
 
   document.querySelectorAll('[data-animate]').forEach(el => {
@@ -926,6 +926,13 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.fade-up:not([data-animate])').forEach(el => {
     animateObserver.observe(el);
   });
+
+  // Fallback: after 2s reveal any elements that IntersectionObserver missed
+  setTimeout(() => {
+    document.querySelectorAll('[data-animate]:not(.in-view), .fade-up:not(.in-view)').forEach(el => {
+      el.classList.add('in-view');
+    });
+  }, 2000);
 
   // ---------------------------------------------------------------------------
   // 4. STICKY CTA VISIBILITY
